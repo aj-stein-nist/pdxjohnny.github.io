@@ -9,9 +9,39 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-01-09T16:24:13Z</updated>
+  <updated>2021-01-09T16:54:20Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
+  <entry>
+    <title>Today I Learned</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/til/</id>
+    <updated>2021-01-09T16:00:00Z</updated>
+    <published>2021-01-09T16:00:00Z</published>
+    <content type="html"><![CDATA[<h1 id="2021-01-8">2021-01-8</h1>
+<p>Forward a UNIX socket over SSH. This command will sit around in the background.</p>
+<p>References: <a href="https://github.com/moby/moby/pull/18373#issuecomment-184895457">https://github.com/moby/moby/pull/18373#issuecomment-184895457</a></p>
+<pre><code class="language-console" data-lang="console">$ ssh -L ./mysock:/var/run/docker.sock -Nf hostname.example.com
+</code></pre><h1 id="2021-01-09">2021-01-09</h1>
+<p><a href="https://stackoverflow.com/questions/65515652/fix-cannot-update-component-from-inside-function-body-of-different-component-w">https://stackoverflow.com/questions/65515652/fix-cannot-update-component-from-inside-function-body-of-different-component-w</a></p>
+<p>Some thoughts:
+Pretty sure it’s because we call setState within the render method, which is
+whatever method returns JSX, <code>return (&lt;stuff&gt;...&lt;/stuff&gt;)</code>.</p>
+<p>I think it doesn’t like that since we pass the setter to the child, then the
+child renders, and could immediately call setState (<code>if (data === true)</code>), which
+triggers a re-render in the parent, which triggers a re-render in the child,
+which calls setState... and causes an infinite loop effectively.</p>
+<p>Create wrapper around setter and pass to children
+<a href="https://github.com/intel/dffml/blob/b88424a927f6279191285e2103a2b50b993b1921/service/webui/webui/src/Paperbase.js#L167-L205">https://github.com/intel/dffml/blob/b88424a927f6279191285e2103a2b50b993b1921/service/webui/webui/src/Paperbase.js#L167-L205</a>
+<a href="https://github.com/intel/dffml/blob/b88424a927f6279191285e2103a2b50b993b1921/service/webui/webui/src/Paperbase.js#L228-L236">https://github.com/intel/dffml/blob/b88424a927f6279191285e2103a2b50b993b1921/service/webui/webui/src/Paperbase.js#L228-L236</a></p>
+<p>Old style class accepting wrapped setter (props.saveBackend())
+<a href="https://github.com/intel/dffml/blob/b88424a927f6279191285e2103a2b50b993b1921/service/webui/webui/src/SetBackendPopup.js#L16-L48">https://github.com/intel/dffml/blob/b88424a927f6279191285e2103a2b50b993b1921/service/webui/webui/src/SetBackendPopup.js#L16-L48</a></p>
+<p>New style class accepting wrapped setter (saveBackend())
+<a href="https://github.com/intel/dffml/blob/b88424a927f6279191285e2103a2b50b993b1921/service/webui/webui/src/SettingsBackend.js#L44-L60">https://github.com/intel/dffml/blob/b88424a927f6279191285e2103a2b50b993b1921/service/webui/webui/src/SettingsBackend.js#L44-L60</a></p>]]></content>
+  </entry>
   <entry>
     <title>Python</title>
     <author>
