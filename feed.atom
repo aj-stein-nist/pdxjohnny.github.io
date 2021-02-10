@@ -9,9 +9,255 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-01-23T06:35:59Z</updated>
+  <updated>2021-02-10T07:49:28Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
+  <entry>
+    <title>Personal Digital Security</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/personal-digital-security/</id>
+    <updated>2021-02-10T06:00:00Z</updated>
+    <published>2021-02-10T06:00:00Z</published>
+    <content type="html"><![CDATA[<p>This post will cover steps you can take to better secure the digital aspects of
+your life. We will cover some applications (software) and devices (hardware)
+that you can use.</p>
+<ul>
+<li><a href="#high-level-guidance">High Level Guidance</a></li>
+<li><a href="#applications">Applications</a></li>
+<li><a href="#devices">Devices</a></li>
+<li><a href="#personal-considerations">Personal Considerations</a></li>
+<li><a href="#threat-considerations">Threat Considerations</a></li>
+<li><a href="#rational">Rational</a></li>
+<li><a href="#theory">Theory</a></li>
+</ul>
+<h1 id="high-level-guidance">High Level Guidance</h1>
+<p>This high level guidance is meant to be generic, since individuals have
+different situations, hardware, and software. If you have a specific case you
+need help with, reach out to me and I will try to give you more clarity.</p>
+<h2 id="update-and-encrypt">Update and Encrypt</h2>
+<p>These are two high level concepts we'll be following.</p>
+<ul>
+<li>
+<p>Update</p>
+<ul>
+<li>Make sure you're running the latest software. Ideally this also means
+running on hardware with the latest security features.</li>
+</ul>
+</li>
+<li>
+<p>Encrypt</p>
+<ul>
+<li>Make sure that your talking over encrypted channels. To your friends, to
+your bank, wherever possible.</li>
+</ul>
+</li>
+<li>
+<p>Miscellaneous</p>
+<ul>
+<li>
+<p>Make long, unique passwords.</p>
+<ul>
+<li>Use a password manager</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="update">Update</h3>
+<ul>
+<li>
+<p>Make sure that auto updates are on on all your devices.</p>
+<ul>
+<li>
+<p>If there is a setting for frequency, make it as frequently as possible.</p>
+</li>
+<li>
+<p>There is usually a device level setting found in the devices main settings
+application.</p>
+</li>
+<li>
+<p>There may be a setting for the pieces of software on the device. Found in an
+app store or something like that.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If you can afford it. Buy the latest versions of whatever devices you use.</p>
+<ul>
+<li>This is particularly important if you are concerned your device might
+be physically acessable by someone you don't trust.</li>
+</ul>
+</li>
+</ul>
+<h3 id="encrypt">Encrypt</h3>
+<ul>
+<li>
+<p>Use encryption wherever possible</p>
+<ul>
+<li>
+<p>You should always choose ways of communicating that are encrypted. You do
+not know what information, no matter how inconsequentiall it seems to you,
+might be of use to comprimise the security of seemingly unrelated areas.</p>
+</li>
+<li>
+<p>Communicating using encryption means that there has been some control placed
+on who can see the contents of your communication. The level of control over
+who can see communications is</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Use end-to-end encryption whenever possible</p>
+<ul>
+<li>End-To-End encryption is used to describe a situation where only the
+sender and the recepieant can see a message. By definition, anything that
+is not end-to-end encrypted could possibly be seen by someone other than
+your intended recipient.</li>
+</ul>
+</li>
+</ul>
+<h1 id="applications">Applications</h1>
+<p>Here are some applications you can use to increase your security.</p>
+<h2 id="signal">Signal</h2>
+<p>Signal is an end-to-end encrypted messaging application.</p>
+<ul>
+<li><a href="https://signal.org/install">Install Signal</a></li>
+</ul>
+<p>You can be confident that you are communicating securely if you have an updated,
+recent phone, and you have verified the safety number of the person you are
+talking to over signal. For the best possible assurance that you are talking to
+who you think you are talking to, verify safety numbers in person by scanning
+each others QR code safety numbers.</p>
+<p>Do not set a PIN. This will make it so that your data is backed up on their
+servers. This is convenient for you if you switch devices, but means that they
+could potentially decrypt your messages and contacts if they guessed your PIN
+(which is easy to do).</p>
+<p><a href="https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN#pin_disable">https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN#pin_disable</a></p>
+<p>Make sure to read <a href="#governments---police">Threat Considerations: Governments</a>
+too.</p>
+<h1 id="devices">Devices</h1>
+<p>These are some devices which have reasonably good security, or can be used to
+improve your security posture.</p>
+<p>For any device, security is typically increased when the device is powered off.
+If you are in a situation where you think your device might be taken from you,
+<strong>TURN IT OFF</strong>.</p>
+<h2 id="chromebooks">Chromebooks</h2>
+<p>A Chromebook is in my opinion the most secure consumer laptop available at the
+moment. Their lack of ability to install software significantly decreases the
+amount of attacks that can be done on them (<a href="#attack-surface">Theory: Attack
+Surface</a>).</p>
+<h1 id="personal-considerations">Personal Considerations</h1>
+<blockquote>
+<p>This section is in progress</p>
+</blockquote>
+<h1 id="threat-considerations">Threat Considerations</h1>
+<blockquote>
+<p>This section is in progress</p>
+</blockquote>
+<h2 id="apple">Apple</h2>
+<p>Apple does a very good job, they also tend to care about their users privacy
+more than most other companies. This means they work hard than most others to
+protect it by building secure products.</p>
+<h2 id="google">Google</h2>
+<h2 id="governments---police">Governments - Police</h2>
+<p>This goes for all government entities. If the government is in the list of
+people you're worried about, do not use a fingerprint, face unlock, or any other
+non-password based method to unlock your devices. There are laws protecting your
+password in your head but not your fingers and face from being used to unlock
+your devices.</p>
+<p>If you think they are going to get your device, <strong>TURN IT OFF</strong>. This is the
+best thing you can do to stop them from getting into it. Make sure it is off
+before interacting with them.</p>
+<h2 id="governments---three-letter-agencies">Governments - Three Letter Agencies</h2>
+<h1 id="rational">Rational</h1>
+<p>Let's go into detail on why the above guidance holds true broad spectrum.</p>
+<h3 id="update-1">Update</h3>
+<p>Updating is main way we respond to vulnerabilities. The software and hardware
+our devices run on will enviably suffer from vulnerabilities. This is why we
+MUST update them.</p>
+<ul>
+<li>
+<p>Auto Updates</p>
+<ul>
+<li>Hardware and software vulnerabilities are identified on a regular basis.
+Updates contain fixes to vulnerabilities. If your device has a
+vulnerability, an update may &quot;patch&quot; the vulnerability. A &quot;patch&quot; for a
+vulnerability is a fix which makes your device no longer vulnerable. If you
+do not update, you will not get the &quot;patch&quot;es that fix vulnerabilities, and
+your device will be vulnerable.</li>
+</ul>
+</li>
+<li>
+<p>If you can afford it. Buy the latest versions of whatever devices you use.</p>
+<ul>
+<li>In a given product line, such as the Google or Apple phones, devices are
+made of hardware components. The product lines have versions, the components
+within those products also have versions. When you buy the latest version of
+a device, you're doing an update of your hardware. Hardware vulnerabilities
+usually a concern when someone might have physical access to your device.
+Typical examples of this include airport securty, police, theives, abusive
+partners, etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="encrypt-1">Encrypt</h3>
+<ul>
+<li>
+<p>Use encryption wherever possible</p>
+<ul>
+<li>
+<p>You should always choose ways of communicating that are encrypted. You do
+not know what information, no matter how inconsequentiall it seems to you,
+might be of use to comprimise the security of seemingly unrelated areas.</p>
+</li>
+<li>
+<p>Communicating using encryption means that there has been some control placed
+on who can see the contents of your communication. The level of control over
+who can see communications is</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Use end-to-end encryption whenever possible</p>
+<ul>
+<li>End-To-End encryption is used to describe a situation where only the
+sender and the recepieant can see a message. By definition, anything that
+is not end-to-end encrypted could possibly be seen by someone other than
+your intended recipient.</li>
+</ul>
+</li>
+</ul>
+<h1 id="theory">Theory</h1>
+<blockquote>
+<p>This section is in progress</p>
+</blockquote>
+<h2 id="attack-surface">Attack Surface</h2>
+<p>The potential for a there to be a vulnerability is directly related to the
+number of components in a system and the quality of those components.</p>
+<h2 id="threat-model">Threat Model</h2>
+<p>For a given situation.</p>
+<ul>
+<li>
+<p>What are your assets?</p>
+<ul>
+<li>Assets are things you may want to protect.</li>
+</ul>
+</li>
+<li>
+<p>Who are the actors?</p>
+<ul>
+<li>Who are the potential people or entities involved in a situation? At a
+minimum there is you, and the &quot;attacker&quot;.</li>
+</ul>
+</li>
+</ul>
+<h2 id="mitm">MITM</h2>
+<p>Man-in-the-middle or person-in-the-middle attacks are when someone inserts
+themselves into a thought to be private conversation.</p>]]></content>
+  </entry>
   <entry>
     <title>Digital Ocean Python Scripting</title>
     <author>
