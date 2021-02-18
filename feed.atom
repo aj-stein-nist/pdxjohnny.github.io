@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-02-12T23:37:01Z</updated>
+  <updated>2021-02-18T05:04:54Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -445,7 +445,10 @@ which calls setState... and causes an infinite loop effectively.</p>
 <p><a href="https://www.reddit.com/r/nucleuscoop/comments/fjdqid/list_of_new_supported_games_and_faq/">https://www.reddit.com/r/nucleuscoop/comments/fjdqid/list_of_new_supported_games_and_faq/</a></p>
 <h1 id="2021-02-12">2021-02-12</h1>
 <p>Sealed boxes, anonymously encrypt something using a public key</p>
-<p><a href="https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes">https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes</a></p>]]></content>
+<p><a href="https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes">https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes</a></p>
+<h1 id="2021-02-17">2021-02-17</h1>
+<p>Regular experssion builder helper</p>
+<p><a href="https://regex101.com/">https://regex101.com/</a></p>]]></content>
   </entry>
   <entry>
     <title>Python</title>
