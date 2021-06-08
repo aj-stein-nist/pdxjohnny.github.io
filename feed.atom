@@ -9,21 +9,113 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-04-25T09:39:11Z</updated>
+  <updated>2021-06-08T20:29:45Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
-    <title>Life</title>
+    <title>Kernelci</title>
     <author>
       <name>John Andersen</name>
       <uri>https://pdxjohnny.github.io/</uri>
     </author>
-    <id>https://pdxjohnny.github.io/life/</id>
-    <updated>2021-04-25T09:00:00Z</updated>
-    <published>2021-04-25T09:00:00Z</published>
-    <content type="html"><![CDATA[<h2 id="what-to-study">What to study</h2>
-<p>Look at job postings that interest you. Look at the requirements, if it's a
-degree target your college education at that degree.</p>]]></content>
+    <id>https://pdxjohnny.github.io/kernelci/</id>
+    <updated>2021-04-02T15:00:00Z</updated>
+    <published>2021-04-02T15:00:00Z</published>
+    <content type="html"><![CDATA[<p>Neelima and John setting up KernelCI</p>
+<p>Working off <a href="https://github.com/kernelci/kernelci-backend-config/blob/master/INSTALL.md">https://github.com/kernelci/kernelci-backend-config/blob/master/INSTALL.md</a></p>
+<p>We clone the config</p>
+<pre><code class="language-console" data-lang="console">git clone https://github.com/kernelci/kernelci-backend-config.git
+</code></pre><p>We found out that you have to create a file for each host under <code>host_vars/</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-diff" data-lang="diff">
+</code></pre></div><pre><code>127.0.0.1 - - [07/Apr/2021 14:22:13] &quot;GET / HTTP/1.1&quot; 500 -
+Traceback (most recent call last):
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/app.py&quot;, line 2301, in __call__
+    return self.wsgi_app(environ, start_response)
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/app.py&quot;, line 2287, in wsgi_app
+    response = self.handle_exception(e)
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/app.py&quot;, line 1733, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/app.py&quot;, line 2284, in wsgi_app
+    response = self.full_dispatch_request()
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/app.py&quot;, line 1807, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/app.py&quot;, line 1705, in handle_user_exception
+    return self.handle_http_exception(e)
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/app.py&quot;, line 1642, in handle_http_exception
+    return handler(e)
+  File &quot;/srv/kernelci-frontend/app/dashboard/__init__.py&quot;, line 155, in internal_server_error
+    return render_template(&quot;500.html&quot;, page_content=page_content), 500
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/templating.py&quot;, line 133, in render_template
+    ctx.app.update_template_context(context)
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask/app.py&quot;, line 790, in update_template_context
+    context.update(func())
+  File &quot;/srv/kernelci-frontend/app/dashboard/__init__.py&quot;, line 128, in inject_variables
+    back_version=backend.get_version(),
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/flask_cache/__init__.py&quot;, line 537, in decorated_function
+    rv = f(*args, **kwargs)
+  File &quot;/srv/kernelci-frontend/app/dashboard/utils/backend.py&quot;, line 420, in get_version
+    data, status_code, headers = request_get(url)
+  File &quot;/srv/kernelci-frontend/app/dashboard/utils/backend.py&quot;, line 277, in request_get
+    abort(500)
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/werkzeug/exceptions.py&quot;, line 772, in abort
+    return _aborter(status, *args, **kwargs)
+  File &quot;/srv/kernelci-frontend/.venv/lib/python2.7/site-packages/werkzeug/exceptions.py&quot;, line 753, in __call__
+    raise self.mapping[code](*args, **kwargs)
+InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+</code></pre><p>Which made it so that every time I made a request, I started seeing this in the
+logs (directly above the traceback).</p>
+<pre><code>http://api.mydomain.local/version
+127.0.0.1 - - [07/Apr/2021 14:22:13] &quot;GET / HTTP/1.1&quot; 500 -
+Traceback (most recent call last):
+</code></pre><p>So it's making a request to: <code>http://api.mydomain.local/version</code></p>
+<p>I then looked in the /etc/hosts file, and saw that we must have lost the entries
+for api.mydomain.local and frontend.mydomain.local So I re-added them and it's
+no longer dumping the same traceback page.</p>
+<p>Also, I created a systemd unit file to start the frontend service. It wasn't
+clear to me how it was supposed to get started. I didn't see any docs about it
+or anything in the repo or in the config repo for the frontend.</p>
+<p>Create the virtualenv</p>
+<pre><code class="language-console" data-lang="console">$ python2 -m virtualenv /srv/kernelci-frontend/.venv
+</code></pre><p>Activate the virtualenv and install dependencies</p>
+<pre><code class="language-console" data-lang="console">$ . srv/kernelci-frontend/.venv/bin/activate
+$ pip install -r requirements.txt
+</code></pre><p>Create the systemd service for the frontend</p>
+<pre><code class="language-console" data-lang="console">cat &gt; /etc/systemd/system/kernelci-frontend.service &lt;&lt;'EOF'
+[Unit]
+Description=Kernel CI Frontend Service
+Requires=kernelci-backend.service
+After=kernelci-backend.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+ProtectSystem=full
+ProtectHome=true
+NoNewPrivileges=true
+PrivateTmp=true
+SyslogIdentifier=kernelci-frontend
+LimitNOFILE=65536
+RestartSec=5
+Restart=always
+WorkingDirectory=/srv/kernelci-frontend/app
+ExecStart=/srv/kernelci-frontend/.venv/bin/python -OO -R server.py
+
+[Install]
+WantedBy=multi-user.target
+EOF
+</code></pre><p>Reload the systemd daemon to see the new service file</p>
+<pre><code class="language-console" data-lang="console">$ systemctl daemon-reload
+</code></pre><p>Enable the frontend service to start on boot and use --now to start it now too</p>
+<pre><code class="language-console" data-lang="console">$ systemctl enable --now kernelci-frontend
+</code></pre><p>I had to do the systemd service file to see the log output. I think you had been
+running it from an ssh session or something. So I stopped that process, and now
+it runs under systemd. Which means we can see the log output with journalctl -xe</p>
+<p>Oh, and the backend code is broken. So the patch in the that PR above needs to
+be applied or else nothing works.</p>
+<pre><code class="language-console" data-lang="console">cd /srv/kernelci-backend
+curl -sfL https://github.com/kernelci/kernelci-backend/pull/285.patch | git am
+</code></pre>]]></content>
   </entry>
   <entry>
     <title>Personal Digital Security</title>
