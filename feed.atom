@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-06-08T20:39:19Z</updated>
+  <updated>2021-06-09T20:54:19Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -575,7 +575,40 @@ which calls setState... and causes an infinite loop effectively.</p>
     <content type="html"><![CDATA[<blockquote>
 <p>This post is in progress</p>
 </blockquote>
-<h1 id="async-def-and-await"><code>async def</code> and <code>await</code></h1>
+<h2 id="development-environment">Development Environment</h2>
+<p>First, update pip! <code>pip</code> is the way you'll install Python libraries and
+programs that already exist. You'll likely need to install some existing things
+using <code>pip</code> which you might <code>import</code> from your Python files for use in your
+project.</p>
+<p>We use the <code>--user</code> flag to tell pip to install just for our user. This
+eliminates the need for <code>sudo</code>.</p>
+<pre><code class="language-console" data-lang="console">$ python3 -m pip install --user --upgrade pip
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/cd/82/04e9aaf603fdbaecb4323b9e723f13c92c245f6ab2902195c53987848c78/pip-21.1.2-py3-none-any.whl (1.5MB)
+    100% |████████████████████████████████| 1.6MB 862kB/s
+Installing collected packages: pip
+Successfully installed pip-21.1.2
+</code></pre><p>Before you install any Python package, always update three packages. <code>pip</code>,
+<code>setuptools</code>, and <code>wheel</code>. These packages are used in the download and
+installation process of many packages. Installation of packages may fail due to
+them requiring features of these three packages only present in their latest
+versions. Which is why we always update them before installing other packages.</p>
+<pre><code class="language-console" data-lang="console">$ python3 -m pip install --upgrade pip setuptools wheel
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pip in ./.local/lib/python3.6/site-packages (21.1.2)
+Requirement already satisfied: setuptools in /usr/lib/python3.6/site-packages (39.2.0)
+Collecting setuptools
+  Downloading setuptools-57.0.0-py3-none-any.whl (821 kB)
+     |████████████████████████████████| 821 kB 381 kB/s
+Collecting wheel
+  Downloading wheel-0.36.2-py2.py3-none-any.whl (35 kB)
+Installing collected packages: wheel, setuptools
+Successfully installed setuptools-57.0.0 wheel-0.36.2
+</code></pre><h2 id="installing-packages">Installing packages</h2>
+<p>With a recent version of pip installed, Python will install to your <code>--user</code>
+location even if you forget to specify.</p>
+<pre><code class="language-console" data-lang="console">$ python3 -m pip install --upgrade dffml
+</code></pre><h2 id="async-def-and-await"><code>async def</code> and <code>await</code></h2>
 <p><code>await</code> is a keyword which means &quot;give me the return value <em>when it's ready</em>&quot;.
 The caller is understands the return value may not be ready right away. The
 caller knows that the callee may not have the return value right away since the
