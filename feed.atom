@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-07-16T16:13:06Z</updated>
+  <updated>2021-10-07T03:56:26Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -1115,7 +1115,15 @@ decrease size of output file</p>
     <id>https://pdxjohnny.github.io/linux-kernel/</id>
     <updated>2020-10-06T08:00:00Z</updated>
     <published>2020-07-24T06:00:00Z</published>
-    <content type="html"><![CDATA[<h1 id="quickstart">Quickstart</h1>
+    <content type="html"><![CDATA[<h1 id="videos">Videos</h1>
+<ul>
+<li>Kernel Recipes 2014 - The Linux Kernel, how fast it is developed and how we stay sane doing it
+<ul>
+<li><a href="https://www.youtube.com/watch?v=DmDmXDtaz-U">https://www.youtube.com/watch?v=DmDmXDtaz-U</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="quickstart">Quickstart</h1>
 <p>We are going to download the Git repositories of QEMU and the Linux kernel. We
 are not going to cover what dependencies are required. You should read the
 reference links for each section to help you get the compilers and other build
