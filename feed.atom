@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-10-09T15:15:51Z</updated>
+  <updated>2021-10-09T21:00:38Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2075,6 +2075,11 @@ inside them.</p>
 </code></pre><h2 id="do-a-vim-commands-on-files-in-an-automated-way">Do a vim commands on files in an automated way</h2>
 <p>Remove all newlines from end of file</p>
 <pre><code class="language-console" data-lang="console">$ for file in $(echo examples/notebooks/*.ipynb); do vim -b '+set noeol' '+wq' $file; done
+</code></pre><h2 id="open-a-list-of-files-in-tmux-panes">Open a list of files in tmux panes</h2>
+<pre><code class="language-console" data-lang="console">$ for file in $(git ls-files); do tmux split-window -h &quot;vim ${file}&quot;; tmux next-layout; done
+</code></pre><p><a href="https://asciinema.org/a/441107"><img src="https://asciinema.org/a/441107.svg" alt="asciicast"></a></p>
+<h2 id="close-all-but-the-active-tmux-pane">Close all but the active tmux pane</h2>
+<pre><code class="language-console" data-lang="console">$  for pane in $(tmux list-pane | grep -v active | sed -e 's/:.*//g'); do export pane=$(tmux list-pane | grep -v active | sed -e 's/:.*//g' | head -n 1); tmux kill-pane -t $pane ; done
 </code></pre>]]></content>
   </entry>
   <entry>
