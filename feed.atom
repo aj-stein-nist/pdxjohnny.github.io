@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-10-07T04:06:27Z</updated>
+  <updated>2021-10-09T15:15:51Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2072,6 +2072,9 @@ inside them.</p>
 <pre><code class="language-console" data-lang="console">$ git grep -A 25 -E 'dffml train|dffml accuracy|dffml predict' | python -c 'import sys; print(&quot;--&quot;.join([i for i in sys.stdin.read().split(&quot;--&quot;) if not &quot;model-directory&quot; in i]).strip())'
 </code></pre><h2 id="display-a-file-as-plain-text-in-a-browser">Display a file as plain text in a browser</h2>
 <pre><code class="language-console" data-lang="console">$ (echo -e 'HTTP/1.0 200 OK\n' &amp;&amp; cat myfile.txt) | nc -lp 8080
+</code></pre><h2 id="do-a-vim-commands-on-files-in-an-automated-way">Do a vim commands on files in an automated way</h2>
+<p>Remove all newlines from end of file</p>
+<pre><code class="language-console" data-lang="console">$ for file in $(echo examples/notebooks/*.ipynb); do vim -b '+set noeol' '+wq' $file; done
 </code></pre>]]></content>
   </entry>
   <entry>
