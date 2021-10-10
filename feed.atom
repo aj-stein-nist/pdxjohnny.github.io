@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-10-10T03:13:33Z</updated>
+  <updated>2021-10-10T19:09:26Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2409,11 +2409,131 @@ it in the <code>.gdbinit</code> file and <code>Makefile</code>.</p>
 can see the solution.</p>
 <h2 id="arduino">Arduino</h2>
 <pre><code class="language-console" data-lang="console">curl -sfL https://github.com/arduino/arduino-cli/releases/download/0.19.2/arduino-cli_0.19.2_Linux_64bit.tar.gz | tar xvz
-./arduino-cli config init --overwrite
+# Hangs because proxies aren't set yet
+timeout 1s ./arduino-cli config init --overwrite
 ./arduino-cli config set network.proxy $https_proxy
-./arduino-cli core update-index --log-level debug -v
+./arduino-cli core update-index
+./arduino-cli core install arduino:avr
 ./arduino-cli compile --fqbn arduino:avr:leonardo .
-</code></pre>]]></content>
+</code></pre><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">
+</span><span class="s2">
+</span><span class="s2">Compile QEMU Version 5.1.0 or newer. 5.1.0 is when AVR support was introduced.
+</span><span class="s2">
+</span><span class="s2">.. code-block:: console
+</span><span class="s2">
+</span><span class="s2">    $ wget https://download.qemu.org/qemu-6.1.0.tar.xz
+</span><span class="s2">    $ tar xvJf qemu-6.1.0.tar.xz
+</span><span class="s2">    $ cd qemu-6.1.0
+</span><span class="s2">    $ ./configure --target-list=&#34;avr-softmmu&#34;
+</span><span class="s2">    $ make -j $(($(nproc)*4))
+</span><span class="s2">
+</span><span class="s2">Change directory to this file&#39;s parent directory and run using unittest
+</span><span class="s2">
+</span><span class="s2">.. code-block:: console
+</span><span class="s2">
+</span><span class="s2">    $ cd python/cmd_msg_test/
+</span><span class="s2">    $ python -u -m unittest discover -v
+</span><span class="s2">    test_connect (test_cmd_msg.TestSerial) ... qemu-system-avr: -chardev socket,id=serial_port,path=/tmp/tmpuuq3oqvj/socket,server=on: info: QEMU waiting for connection on: disconnected:unix:/tmp/tmpuuq3oqvj/socket,server=on
+</span><span class="s2">    reading message from arduino
+</span><span class="s2">    b&#39;&#39;
+</span><span class="s2">    b&#39;&#39;
+</span><span class="s2">    qemu-system-avr: terminating on signal 2 from pid 90395 (python)
+</span><span class="s2">    ok
+</span><span class="s2">
+</span><span class="s2">    ----------------------------------------------------------------------
+</span><span class="s2">    Ran 1 test in 4.601s
+</span><span class="s2">
+</span><span class="s2">    OK
+</span><span class="s2">&#34;&#34;&#34;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">signal</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">contextlib</span>
+<span class="kn">import</span> <span class="nn">dataclasses</span>
+
+<span class="kn">import</span> <span class="nn">main</span>
+
+<span class="c1"># top level directory in this git repo is three levels up</span>
+<span class="n">REPO_ROOT</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+
+
+<span class="nd">@contextlib.contextmanager</span>
+<span class="k">def</span> <span class="nf">start_qemu</span><span class="p">(</span><span class="n">bios</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tempdir</span><span class="p">:</span>
+        <span class="n">socket_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">tempdir</span><span class="p">,</span> <span class="s2">&#34;socket&#34;</span><span class="p">)</span>
+        <span class="n">qemu_cmd</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&#34;qemu-system-avr&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;-mon&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;chardev=none&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;-chardev&#34;</span><span class="p">,</span>
+            <span class="n">f</span><span class="s2">&#34;null,id=none&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;-serial&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;chardev:serial_port&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;-chardev&#34;</span><span class="p">,</span>
+            <span class="n">f</span><span class="s2">&#34;socket,id=serial_port,path={socket_path},server=on&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;-nographic&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;-machine&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;arduino-uno&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;-cpu&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;avr6-avr-cpu&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;-bios&#34;</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">bios</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">qemu_proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">qemu_cmd</span><span class="p">,</span> <span class="n">start_new_session</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">serial_port_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">tempdir</span><span class="p">,</span> <span class="s2">&#34;ttyACM0&#34;</span><span class="p">)</span>
+        <span class="n">socat_cmd</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&#34;socat&#34;</span><span class="p">,</span>
+            <span class="n">f</span><span class="s2">&#34;PTY,link={serial_port_path},rawer,wait-slave&#34;</span><span class="p">,</span>
+            <span class="n">f</span><span class="s2">&#34;UNIX:{socket_path}&#34;</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="n">socat_proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">socat_cmd</span><span class="p">,</span> <span class="n">start_new_session</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">serial_port_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="k">pass</span>
+            <span class="k">yield</span> <span class="nb">str</span><span class="p">(</span><span class="n">serial_port_path</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="c1"># Kill the whole process group (for problematic processes like qemu)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">qemu_proc</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">socat_proc</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">)</span>
+        <span class="n">qemu_proc</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">socat_proc</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">RunQEMU</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Base class which will start QEMU to emulate an Arduino Uno machine using the
+</span><span class="s2">    BIOS (the .elf output of arduino-cli compile) provided.
+</span><span class="s2">
+</span><span class="s2">    qemu-system-avr from QEMU Version 5.1.0 or newer is required.
+</span><span class="s2">
+</span><span class="s2">    Starts a new virtual machine for each test_ function.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="n">BIOS</span> <span class="o">=</span> <span class="n">REPO_ROOT</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&#34;build&#34;</span><span class="p">,</span> <span class="s2">&#34;serial_cmd_test.ino.elf&#34;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qemu</span> <span class="o">=</span> <span class="n">start_qemu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">BIOS</span><span class="p">)</span>
+        <span class="c1"># __enter__ is called at the begining of a `with` block. __exit__ is</span>
+        <span class="c1"># called at the end of a `with` block. By calling these functions</span>
+        <span class="c1"># explicitly within setUp() and tearDown() we ensure a new VM is created</span>
+        <span class="c1"># and destroyed each time.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">serial_port</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qemu</span><span class="o">.</span><span class="fm">__enter__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qemu</span><span class="o">.</span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">qemu</span>
+
+
+<span class="k">class</span> <span class="nc">TestSerial</span><span class="p">(</span><span class="n">RunQEMU</span><span class="p">,</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;SERIAL_PORT&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serial_port</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&#34;main.py&#34;</span><span class="p">])</span>
+</code></pre></div>]]></content>
   </entry>
   <entry>
     <title>Trinity fuzzer on Android (on Intel)</title>
