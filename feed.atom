@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-10-09T21:01:20Z</updated>
+  <updated>2021-10-10T03:13:33Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2406,7 +2406,14 @@ gdb target on port 1234, so make sure nothing else is using that port or change
 it in the <code>.gdbinit</code> file and <code>Makefile</code>.</p>
 <h2 id="help-nothing-works">Help nothing works</h2>
 <p>Comment on the gist with the problem so we can figure it out and everyone else
-can see the solution.</p>]]></content>
+can see the solution.</p>
+<h2 id="arduino">Arduino</h2>
+<pre><code class="language-console" data-lang="console">curl -sfL https://github.com/arduino/arduino-cli/releases/download/0.19.2/arduino-cli_0.19.2_Linux_64bit.tar.gz | tar xvz
+./arduino-cli config init --overwrite
+./arduino-cli config set network.proxy $https_proxy
+./arduino-cli core update-index --log-level debug -v
+./arduino-cli compile --fqbn arduino:avr:leonardo .
+</code></pre>]]></content>
   </entry>
   <entry>
     <title>Trinity fuzzer on Android (on Intel)</title>
