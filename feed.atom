@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-10-10T19:09:35Z</updated>
+  <updated>2021-10-13T17:54:35Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -577,6 +577,184 @@ which calls setState... and causes an infinite loop effectively.</p>
 <p>Hedge Fund Legend Paul Tudor Jones
 &quot;5:1 (risk /reward) Five to one means I’m risking one dollar to make five.  What five to one does is allow you to have a hit ratio of 20%.  I can actually be a complete imbecile. I can be wrong 80% of the time and I’m still not going to lose.&quot;</p>
 <p><a href="https://mobile.twitter.com/realwillmeade/status/1365661871999713283">https://mobile.twitter.com/realwillmeade/status/1365661871999713283</a></p>]]></content>
+  </entry>
+  <entry>
+    <title>TPM2.0</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/tpm2/</id>
+    <updated>2020-10-13T19:00:00Z</updated>
+    <published>2020-10-13T19:00:00Z</published>
+    <content type="html"><![CDATA[<p>TPM2.0 Book
+<a href="https://web.archive.org/web/20210629155650/https://link.springer.com/content/pdf/10.1007%2F978-1-4302-6584-9.pdf">https://web.archive.org/web/20210629155650/https://link.springer.com/content/pdf/10.1007%2F978-1-4302-6584-9.pdf</a></p>
+<p>Things to be worried about when using Microsoft's Reference simulator:</p>
+<ul>
+<li>
+<p>It's not production ready</p>
+</li>
+<li>
+<p>Side channel attacks</p>
+</li>
+<li>
+<p>Random numbers</p>
+</li>
+<li>
+<p>Key derivation</p>
+</li>
+<li>
+<p>David Wooten</p>
+<ul>
+<li>TPM Code for commands</li>
+<li>Interface to crypto library</li>
+<li>module rpovded by platform manufacturer
+<ul>
+<li>Time of day</li>
+<li>Random number generator</li>
+<li>Anything in the module call platfrom is supposed to be replaced by acctual platfrom or hardware code</li>
+</ul>
+</li>
+<li>SImulator peice
+<ul>
+<li>TCP/IP interface to talk to the TPM</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>William (Bill) Roberts (notes from his presentation to</p>
+<ul>
+<li>TPM2-TSS
+<ul>
+<li>SAPI (shouldn't be used people aren't gonig to use it much)</li>
+<li>ESAPI Full control but encrypted. If you want full low level control but want to do it with encryption</li>
+<li>FAPI high level automatatic verifyed sessions with TPM and key storage</li>
+<li>RcDecode Return code to error string (strerror for TPM2)</li>
+<li>MU Marshalling and unmarshaling library</li>
+<li>TctiLdr They are similar to a network layer in that they move bytes to and from the TPM over an abitrary interface. Could talk to simulator, or /dev/tpm0</li>
+</ul>
+</li>
+<li>pytss
+<ul>
+<li>All based on cffi</li>
+<li>Classes</li>
+<li>Default arguments</li>
+<li>Type coercions (Python types to TPM types, TPM2B, TPMT_PUBLIC)
+<ul>
+<li>Can take dictionaries</li>
+<li>Can take subclass types directly</li>
+<li>Copy constructors work</li>
+<li>Comparision with string, euqivilent Python types, work</li>
+</ul>
+</li>
+<li>tpm2-tools -G strings work
+<ul>
+<li>-G, -a, -n tpm2-tools strings work</li>
+<li><code>.parse()</code> supported on TPM2T and TPM2B</li>
+<li><code>TPMT_PUBLIC.parse(alg=&quot;rsa2048:rsapss&quot;, objectAttributes=&quot;fixedtpm|sign&quot;)</code></li>
+<li>Defaults to tpm2_create over tpm2_createprimary</li>
+</ul>
+</li>
+<li>TPM2_ALG.parse(&quot;sha&quot;) --&gt; TPM2_ALF.SHA or 0x04
+<ul>
+<li>For all structures</li>
+</ul>
+</li>
+<li>Can load tpm2-tool context files
+<ul>
+<li><code>TPMS_CONTEXT.from_tools(ctxbytes)</code></li>
+</ul>
+</li>
+<li>Exceptions run return code thorugh RcDecode for error message
+<ul>
+<li><code>TSS2_Exception</code></li>
+<li>Handle, parmeter, session, and return code are provided</li>
+</ul>
+</li>
+<li>ESAPI
+<ul>
+<li><code>with ESAPI(TCTILdr(&quot;device&quot;)) as e: e.get_random()</code></li>
+<li>Context managers are your friend, they help you close the underlying TCTI</li>
+<li>Will be able to pass TCTI loader string into <code>ESAPI()</code> call</li>
+<li>Will choose sensible defaults</li>
+<li>Will make you choose auth objects</li>
+</ul>
+</li>
+<li>Converting PEM/DER/SSH keys to TPM
+<ul>
+<li><code>TPM2B_Public.from_pem(rsa_public_key)</code></li>
+<li><code>TPM2B_SENSITIVE.from_pem(rsa_private_key)</code></li>
+<li><code>e.load_extrenal(priv, pub)</code></li>
+<li>Conversions are being done using Python cryptography package</li>
+<li>Other attributes can be set during call to <code>.from_pem()</code></li>
+</ul>
+</li>
+<li>Importing keys ot TPM
+<ul>
+<li>You must wrap before import.</li>
+<li><code>.wrap()</code> let's you add keys</li>
+</ul>
+</li>
+<li><code>make_credential()</code> will create a TPM credential which doesn't require talking to the TPM
+<ul>
+<li>Many people have asked for this</li>
+</ul>
+</li>
+<li>Calculate Name Without TPM
+<ul>
+<li>You can call <code>.get_name()</code> to get the name of a <code>TPM2B_PUBLIC</code> without going to the TPM</li>
+</ul>
+</li>
+<li>TSS2 PEM/DER Format Support</li>
+<li>Can grab keys from openssl engine / provider</li>
+<li>Could create keys with <code>key.create_rsa(esapi).to_pem()</code></li>
+<li>FAPI
+<ul>
+<li>Very close to C API, doesn't use any of the native TPM types
+<ul>
+<li>Strings byte arrays, PEM files</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Next Steps
+<ul>
+<li>Test against more versions of the TSS</li>
+<li>policy engine
+<ul>
+<li>Eventually pull this back into the Python bindings</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Examples
+<ul>
+<li>Check the test code</li>
+<li>Will be adding to the docs</li>
+<li>test/test_esapi.py
+<ul>
+<li><code>get_random()</code> in two lines</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Conclusions
+<ul>
+<li>Default arguments make commnds simple and less cluttered than the C code</li>
+<li>Docs get updated automatically on read the docs</li>
+<li>Can pass all your normal session handles
+<ul>
+<li>They'll be validated</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>]]></content>
   </entry>
   <entry>
     <title>Python</title>
