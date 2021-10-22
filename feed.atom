@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-10-13T17:54:35Z</updated>
+  <updated>2021-10-22T09:54:09Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2258,6 +2258,12 @@ inside them.</p>
 </code></pre><p><a href="https://asciinema.org/a/441107"><img src="https://asciinema.org/a/441107.svg" alt="asciicast"></a></p>
 <h2 id="close-all-but-the-active-tmux-pane">Close all but the active tmux pane</h2>
 <pre><code class="language-console" data-lang="console">$  for pane in $(tmux list-pane | grep -v active | sed -e 's/:.*//g'); do export pane=$(tmux list-pane | grep -v active | sed -e 's/:.*//g' | head -n 1); tmux kill-pane -t $pane ; done
+</code></pre><h2 id="scrape-page-for-links">Scrape page for links</h2>
+<pre><code class="language-console" data-lang="console">$ curl -sfL &quot;https://pypi.org/simple/dffml/&quot; | python -u -c 'import sys, json, bs4; print(json.dumps({link.get_text(): link.get(&quot;href&quot;) for link in bs4.BeautifulSoup(sys.stdin.read(), &quot;html.parser&quot;).find_all(&quot;a&quot;)}))' | python -m json.tool
+{
+    &quot;dffml-0.4.0.post0-py3-none-any.whl&quot;: &quot;https://files.pythonhosted.org/packages/37/d5/6dc945d453cbdeb15db4249fe09e07bdd2e750a6f256fd893c81ced7bbbb/dffml-0.4.0.post0-py3-none-any.whl#sha256=031dd3a4ca57d46f568f7dd2711a223a26bc343f5f2ac36e1af881ead19e05b6&quot;,
+    &quot;dffml-0.4.0.post0.tar.gz&quot;: &quot;https://files.pythonhosted.org/packages/b0/42/a151555fe3b45926fa041813f8513d883180bdb9e8def64d2d5260609743/dffml-0.4.0.post0.tar.gz#sha256=f6f898c504450e3514dd5791b31bcba21ad9edfc3e896ac5da9cbe3181af5d2b&quot;
+}
 </code></pre>]]></content>
   </entry>
   <entry>
