@@ -9,9 +9,240 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2021-10-22T09:54:09Z</updated>
+  <updated>2022-11-29T21:23:32Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
+  <entry>
+    <title>Note Taking</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/notes/</id>
+    <updated>2022-03-30T06:00:00Z</updated>
+    <published>2022-03-30T06:00:00Z</published>
+    <content type="html"><![CDATA[<p>Notes on taking notes</p>
+<h2 id="format">Format</h2>
+<pre><code># YYYY-MM-DD Title or Meeting Name
+
+- NTT
+  - Ensure each of these are brought up
+- Topic 1
+  - Notes go here organized by topic
+- TODO
+  - Generic future actions
+- Next Steps
+  - ARs
+    - Name will ...
+  - Generic near term future actions
+</code></pre><h2 id="shorthand">Shorthand</h2>
+<p>NTT - Need To Talk about these things in the meeting, checklist of things that must be addressed or brought up</p>]]></content>
+  </entry>
+  <entry>
+    <title>DID Discussion</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/2022-03-02-did-twitter-space/</id>
+    <updated>2022-03-02T11:45:00Z</updated>
+    <published>2022-03-02T11:45:00Z</published>
+    <content type="html"><![CDATA[<h1 id="2022-03-02-did-discussion">2022-03-02 DID Discussion</h1>
+<ul>
+<li><a href="https://twitter.com/techgirl1908/status/1498402992260890628">https://twitter.com/techgirl1908/status/1498402992260890628</a></li>
+<li><a href="https://www.w3.org/TR/did-core/">https://www.w3.org/TR/did-core/</a></li>
+<li>Personal datastore standard
+<ul>
+<li>Will enhance ability to store application data using user keypairs to record metadata on chain and decrypt using private key</li>
+</ul>
+</li>
+<li>Microsoft is integrating DID support to Active Directory</li>
+<li>Privacy preserving angle is only useful once you have conveyance
+<ul>
+<li>People will hand over stuff t</li>
+<li>Need things to work in browser with no plugins, directly to get mass adoption</li>
+</ul>
+</li>
+<li>Google has moved to a system called Macaroons
+<ul>
+<li><a href="https://storage.googleapis.com/pub-tools-public-publication-data/pdf/41892.pdf">https://storage.googleapis.com/pub-tools-public-publication-data/pdf/41892.pdf</a></li>
+<li>Each service has it's own signing authority</li>
+<li>This scales better</li>
+</ul>
+</li>
+<li>System that is like OAuth but with fewer steps
+<ul>
+<li>Having it all work locally and then automatically work across services without prenegotiated tokens is ideal</li>
+<li><a href="https://ucan.xyz/">https://ucan.xyz/</a></li>
+</ul>
+</li>
+<li>Change management and inclusivity
+<ul>
+<li>What if people don't have smart phones or electricity?
+<ul>
+<li>What if you have certain data encrypted on terminals
+<ul>
+<li>Very difficult problem, Microsoft was not able to solve it</li>
+</ul>
+</li>
+<li>In Kim's mind this is the biggest risk
+<ul>
+<li>Can't assume mobile phone, bandwidth</li>
+<li>Systems are not designed with reliance in mind, we need to provide the layer of resiliency</li>
+<li>Want to think about distributed systems as a layer that can be used to bootstrap trust</li>
+<li>Need to ensure people can use the systems we are designing</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Where are the self issued routing tables?</li>
+<li>How come we don't have hundreds of demos?
+<ul>
+<li>Why are we waiting for all the specs to be approved?
+<ul>
+<li>We are not, we are building in parallel</li>
+<li>We want feedback</li>
+<li>Standards help us with interoperability tests</li>
+<li>How do you know that everyone is interpreting the standards in the same way</li>
+</ul>
+</li>
+<li>What are the biggest blockers preventing demos?
+<ul>
+<li>Microsoft was going after educational credentials and workplace credentials</li>
+<li>Microsoft was not so focused on authentication
+<ul>
+<li>There was no strategy around DID</li>
+</ul>
+</li>
+<li>Personal Datastore standard is what unlocks the floodgates
+<ul>
+<li>When you pair these with DID you get the foundations of distributed compute
+<ul>
+<li><a href="https://twitter.com/csuwildcat/status/1379804281381953537">https://twitter.com/csuwildcat/status/1379804281381953537</a></li>
+<li>First you need Identity</li>
+<li>Then you need Storage</li>
+<li>Then you can have Distrusted Compute</li>
+</ul>
+</li>
+<li>If I have DIDs and datastores, then I have created a distributed network</li>
+<li>You have essentially created the Signal Network
+<ul>
+<li>Can I have an ID and permission to store data</li>
+<li><a href="https://techcommunity.microsoft.com/t5/azure-active-directory-identity/identity-hubs-as-personal-datastores/ba-p/389577">https://techcommunity.microsoft.com/t5/azure-active-directory-identity/identity-hubs-as-personal-datastores/ba-p/389577</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ION has been out for a year as 1.0</li>
+<li>Today, can I used DID for auth?
+<ul>
+<li>OIDC for SSI approaches
+<ul>
+<li>Three specs
+<ul>
+<li>Issuing ID in wallet, claims can be issued to
+<ul>
+<li>Functions as DID</li>
+<li>Can participate in different wallet central protocols around authentication</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Get involved
+<ul>
+<li>Join WC3 credentials community</li>
+<li>Join Decentralized Identify Foundation
+<ul>
+<li>Membership required for orgs of over 1000 people</li>
+<li>Talked to Ned Smith about our involvement</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use cases
+<ul>
+<li>DIDs enable change of ownership
+<ul>
+<li>Lifecycle concerns are answered</li>
+<li>When you need to prove anything about yourself, it's portable, you know who's getting your data</li>
+<li>Claim can be anything
+<ul>
+<li>Captures some skill about a person, or maybe some attribute</li>
+<li>Can be issued by a peer
+<ul>
+<li>That's verifiable</li>
+<li>Up to consumer of that information what they want to do with it</li>
+<li>Remove gatekeeping
+<ul>
+<li>You have to have claim X from A, we'll maybe I'll accept Y + Z from B instead</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Every time you author work then you should link it to your DID</li>
+<li>Helps with API flexibility / interoperability between applications</li>
+</ul>
+</li>
+<li>Identity Hubs and DIF
+<ul>
+<li>TBDecks</li>
+</ul>
+</li>
+<li>Verity Decntrialized Identity</li>
+<li>Verifiable Crednetials
+<ul>
+<li>Allow people to move their data with you</li>
+</ul>
+</li>
+<li>Brooklyn Zelenka
+<ul>
+<li><a href="https://whitepaper.fission.codes/">https://whitepaper.fission.codes/</a>
+<ul>
+<li><a href="https://github.com/digitalbazaar/did-method-key/">https://github.com/digitalbazaar/did-method-key/</a></li>
+</ul>
+</li>
+<li>End user can decide what gets read or written</li>
+<li>Allow for serivces, background jobs, to do lots of things</li>
+<li>Working on ucan spec
+<ul>
+<li>Ned Smith mentioned it would be good to have CWTs involved</li>
+<li>Discussion around CWT/DICE and other transport/format support in ucan here: <a href="https://github.com/ucan-wg/spec/discussions/18">https://github.com/ucan-wg/spec/discussions/18</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <title>Seminal articles / papers</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/stories/</id>
+    <updated>2021-10-26T22:57:07Z</updated>
+    <published>2021-10-26T22:57:07Z</published>
+    <content type="html"><![CDATA[<div class="document">
+
+
+<p><a class="reference external" href="https://aphyr.com/posts/341-hexing-the-technical-interview">https://aphyr.com/posts/341-hexing-the-technical-interview</a></p>
+<p><a class="reference external" href="http://www.catb.org/jargon/html/story-of-mel.html">http://www.catb.org/jargon/html/story-of-mel.html</a></p>
+</div>]]></content>
+  </entry>
   <entry>
     <title>Git</title>
     <author>
@@ -21,11 +252,84 @@
     <id>https://pdxjohnny.github.io/git/</id>
     <updated>2021-07-16T16:00:00Z</updated>
     <published>2021-07-16T16:00:00Z</published>
-    <content type="html"><![CDATA[<h2 id="rebase-bulk-rename-commit-messages">Rebase bulk rename commit messages</h2>
+    <content type="html"><![CDATA[<h2 id="cherry-pick-last-n-commits-off-a-branch">Cherry pick last N commits off a branch</h2>
+<p>Picks the last two commits in the order they appear in history on master</p>
+<pre><code class="language-console" data-lang="console">$ git cherry-pick master~2..master
+</code></pre><h2 id="rebase-bulk-rename-commit-messages">Rebase bulk rename commit messages</h2>
 <pre><code class="language-console" data-lang="console">git filter-branch --msg-filter 'sed &quot;s/Refs: #xxxxx/Refs: #22917/g&quot;' master..my_branch
 </code></pre><blockquote>
 <p><a href="https://stackoverflow.com/questions/14332551/whats-the-fastest-way-to-edit-hundreds-of-git-commit-messages">https://stackoverflow.com/questions/14332551/whats-the-fastest-way-to-edit-hundreds-of-git-commit-messages</a></p>
-</blockquote>]]></content>
+</blockquote>
+<h2 id="configure-git-to-rebase-on-pull-instead-of-merge">Configure git to rebase on pull instead of merge</h2>
+<pre><code class="language-console" data-lang="console">git config --global pull.rebase true
+</code></pre><h2 id="arange-patch-files-by-date">Arange patch files by date</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">Arange patch files given as args and outputs the patch files ordered by the date
+</span><span class="s2">within the patch file.
+</span><span class="s2">&#34;&#34;&#34;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+
+
+<span class="k">def</span> <span class="nf">make_parser</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">,</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">RawDescriptionHelpFormatter</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&#34;patches&#34;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">nargs</span><span class="o">=</span><span class="s2">&#34;+&#34;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&#34;The .patch files to organize by date&#34;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">make_parser</span><span class="p">()</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">patches</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+        <span class="o">*</span><span class="p">[</span>
+            <span class="p">[</span>
+                <span class="p">(</span>
+                    <span class="n">patch</span><span class="p">,</span>
+                    <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span>
+                        <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                        <span class="s2">&#34;%a, </span><span class="si">%d</span><span class="s2"> %b %Y %H:%M:%S %z&#34;</span><span class="p">,</span>
+                    <span class="p">),</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">patch_contents</span>
+                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;Date:&#34;</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="k">for</span> <span class="n">patch</span><span class="p">,</span> <span class="n">patch_contents</span> <span class="ow">in</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">patch</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">errors</span><span class="o">=</span><span class="s2">&#34;ignore&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">patch</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">patches</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">patch</span><span class="p">,</span> <span class="n">date</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">patches</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">patch</span><span class="p">),</span> <span class="n">date</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</code></pre></div><h2 id="branching">Branching</h2>
+<p>We support multiple branches so as to provide stability to our users.
+If they go write some code based off our last release, and then we
+release, and no longer support the last version, they will have to
+turn around right after they implemented and update all their code to
+use our new APIs. If we support at least two versions, then it gives
+people time to do other things than spend all their time updating to
+the lastest version of our libraries API!</p>
+<h2 id="github">GitHub</h2>
+<p>GitHub Related tips and tricks</p>
+<h3 id="create-pull-request-and-merge-when-status-checks-complete">Create Pull Request and merge when status checks complete</h3>
+<p>Merges as soon as CI checks pass</p>
+<pre><code class="language-console" data-lang="console">$ gh pr create &amp;&amp; gh pr merge --auto --rebase --delete-branch
+</code></pre>]]></content>
   </entry>
   <entry>
     <title>Kernelci</title>
@@ -576,7 +880,46 @@ which calls setState... and causes an infinite loop effectively.</p>
 <p><a href="https://superuser.com/questions/231776/how-do-i-see-a-history-of-what-ive-post-ed-in-google-chrome/1119310#1119310">https://superuser.com/questions/231776/how-do-i-see-a-history-of-what-ive-post-ed-in-google-chrome/1119310#1119310</a></p>
 <p>Hedge Fund Legend Paul Tudor Jones
 &quot;5:1 (risk /reward) Five to one means I’m risking one dollar to make five.  What five to one does is allow you to have a hit ratio of 20%.  I can actually be a complete imbecile. I can be wrong 80% of the time and I’m still not going to lose.&quot;</p>
-<p><a href="https://mobile.twitter.com/realwillmeade/status/1365661871999713283">https://mobile.twitter.com/realwillmeade/status/1365661871999713283</a></p>]]></content>
+<p><a href="https://mobile.twitter.com/realwillmeade/status/1365661871999713283">https://mobile.twitter.com/realwillmeade/status/1365661871999713283</a></p>
+<h1 id="2022-01-09">2022-01-09</h1>
+<p>Port knocking</p>
+<h2 id="2022-01-24">2022-01-24</h2>
+<p>UEFI shell commands</p>
+<p><code>Shell&gt; map</code> - show FS</p>
+<p><code>Shell&gt; cls</code> - clear screan</p>
+<p><code>Shell&gt; fs1:</code></p>
+<p><code>FS1:\&gt; dir</code></p>
+<p><code>iPXE&gt; sanboot http://example.com/myimg.iso</code></p>
+<h1 id="2022-01-30">2022-01-30</h1>
+<p><a href="https://archive.nanog.org/sites/default/files/2_Steenbergen_Tutorial_New_And_v2.pdf">https://archive.nanog.org/sites/default/files/2_Steenbergen_Tutorial_New_And_v2.pdf</a></p>
+<h1 id="2022-02-09">2022-02-09</h1>
+<p><a href="https://blog.cloudflare.com/missing-manuals-io_uring-worker-pool/">https://blog.cloudflare.com/missing-manuals-io_uring-worker-pool/</a></p>
+<h1 id="2022-04-21">2022-04-21</h1>
+<blockquote>
+<p>The utmp file allows one to discover information about who is
+currently using the system.  There may be more users currently
+using the system, because not all programs use utmp logging.</p>
+</blockquote>
+<p>Source: <a href="https://man7.org/linux/man-pages/man5/utmp.5.html">https://man7.org/linux/man-pages/man5/utmp.5.html</a></p>
+<p>bpf to trace created threads: <a href="https://unix.stackexchange.com/a/606831">https://unix.stackexchange.com/a/606831</a></p>
+<p><a href="https://www.kitploit.com/2022/04/ecapture-capture-ssltls-text-content.html?fbclid=IwAR1lvgfA532iqtjUMcbYt_pfNzy3BsUVLPDz4dnZCas6x_JFrZCWDlIrYGc&amp;m=1">https://www.kitploit.com/2022/04/ecapture-capture-ssltls-text-content.html?fbclid=IwAR1lvgfA532iqtjUMcbYt_pfNzy3BsUVLPDz4dnZCas6x_JFrZCWDlIrYGc&amp;m=1</a></p>
+<p>Mutli-cluster k8s with kcp: <a href="https://asciinema.org/a/471709">https://asciinema.org/a/471709</a></p>
+<h2 id="2022-06-07">2022-06-07</h2>
+<p>Bash history</p>
+<ul>
+<li><a href="https://www.gnu.org/software/bash/manual/bash.html#History-Interaction">https://www.gnu.org/software/bash/manual/bash.html#History-Interaction</a></li>
+<li><a href="https://askubuntu.com/questions/67283/is-it-possible-to-make-writing-to-bash-history-immediate">https://askubuntu.com/questions/67283/is-it-possible-to-make-writing-to-bash-history-immediate</a></li>
+<li><a href="https://www.gnu.org/software/bash/manual/bash.html#index-histchars">https://www.gnu.org/software/bash/manual/bash.html#index-histchars</a></li>
+<li><a href="https://docs.python.org/3/library/time.html#time.strftime">https://docs.python.org/3/library/time.html#time.strftime</a></li>
+</ul>
+<h2 id="2022-06-21">2022-06-21</h2>
+<ul>
+<li><a href="https://til.simonwillison.net/sqlite/one-line-csv-operations">https://til.simonwillison.net/sqlite/one-line-csv-operations</a></li>
+</ul>
+<h2 id="2022-07-13">2022-07-13</h2>
+<ul>
+<li><a href="https://cfcd-prep.cloudfoundry.org/pushing/envars/">https://cfcd-prep.cloudfoundry.org/pushing/envars/</a></li>
+</ul>]]></content>
   </entry>
   <entry>
     <title>TPM2.0</title>
@@ -798,9 +1141,18 @@ Collecting wheel
 Installing collected packages: wheel, setuptools
 Successfully installed setuptools-57.0.0 wheel-0.36.2
 </code></pre><h2 id="installing-packages">Installing packages</h2>
+<p>You should create a new &quot;virtual environment&quot; each time you have a new
+python project. Typically for every directory with a <code>requirements.txt</code> in it,
+you would also have a <code>.venv</code> directory in it with the virtual environment
+which you installed the packages into.</p>
+<p><a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment</a></p>
+<h2 id="installing-packages-globally">Installing packages globally</h2>
+<p>If you want packages to be available for use without activating a virtual
+environment, you can install them to your user site-packages.</p>
 <p>With a recent version of pip installed, Python will install to your <code>--user</code>
-location even if you forget to specify.</p>
-<pre><code class="language-console" data-lang="console">$ python3 -m pip install --upgrade dffml
+location even if you forget to specify. Or you can pass <code>--user</code> to be
+explict about it.</p>
+<pre><code class="language-console" data-lang="console">$ python3 -m pip install --user --upgrade dffml
 </code></pre><h2 id="async-def-and-await"><code>async def</code> and <code>await</code></h2>
 <p><code>await</code> is a keyword which means &quot;give me the return value <em>when it's ready</em>&quot;.
 The caller is understands the return value may not be ready right away. The
@@ -821,7 +1173,65 @@ is another coroutine that was waiting for an event which completed during the
 running of the previous coroutine. If it finds a coroutine that was waiting for
 a now complete event, it runs that coroutine until it either completes, or until
 it is stuck waiting on another event.</p>
-<h1 id="requirementstxt"><code>requirements.txt</code></h1>
+<h2 id="drop-to-debugger-on-exception">Drop to debugger on exception</h2>
+<p><strong>a.py</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s2">&#34;a&#34;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div><p>If you pass <code>-i</code> you dump to a <em>fresh</em> intepreter session</p>
+<pre><code class="language-console" data-lang="console">$ python -i a.py
+Traceback (most recent call last):
+  File &quot;a.py&quot;, line 10, in &lt;module&gt;
+    main()
+  File &quot;a.py&quot;, line 7, in main
+    func(3)
+  File &quot;a.py&quot;, line 2, in func
+    if &quot;a&quot; in a:
+TypeError: argument of type 'int' is not iterable
+&gt;&gt;&gt; a
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name 'a' is not defined
+</code></pre><p>If you run with pdb you get an interpreter session within
+the same context.</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/pdb.html">https://docs.python.org/3/library/pdb.html</a></li>
+<li><a href="https://docs.pytest.org/en/7.0.x/how-to/failures.html#using-python-library-pdb-with-pytest">https://docs.pytest.org/en/7.0.x/how-to/failures.html#using-python-library-pdb-with-pytest</a></li>
+</ul>
+<pre><code class="language-console" data-lang="console">$ python -m pdb a.py
+&gt; /tmp/tmp.aHjcycHqeF/a.py(1)&lt;module&gt;()
+-&gt; def func(a):
+(Pdb) c
+Traceback (most recent call last):
+  File &quot;/usr/lib/python3.7/pdb.py&quot;, line 1699, in main
+    pdb._runscript(mainpyfile)
+  File &quot;/usr/lib/python3.7/pdb.py&quot;, line 1568, in _runscript
+    self.run(statement)
+  File &quot;/usr/lib/python3.7/bdb.py&quot;, line 578, in run
+    exec(cmd, globals, locals)
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;/tmp/tmp.aHjcycHqeF/a.py&quot;, line 1, in &lt;module&gt;
+    def func(a):
+  File &quot;/tmp/tmp.aHjcycHqeF/a.py&quot;, line 7, in main
+    func(3)
+  File &quot;/tmp/tmp.aHjcycHqeF/a.py&quot;, line 2, in func
+    if &quot;a&quot; in a:
+TypeError: argument of type 'int' is not iterable
+Uncaught exception. Entering post mortem debugging
+Running 'cont' or 'step' will restart the program
+&gt; /tmp/tmp.aHjcycHqeF/a.py(2)func()
+-&gt; if &quot;a&quot; in a:
+(Pdb) a
+a = 3
+(Pdb)
+</code></pre><h1 id="requirementstxt"><code>requirements.txt</code></h1>
 <p><a href="https://www.python.org/dev/peps/pep-0508/">https://www.python.org/dev/peps/pep-0508/</a></p>]]></content>
   </entry>
   <entry>
@@ -883,6 +1293,11 @@ or <code>pkg-config</code>. These can be the source of many m4 macro not found e
     <content type="html"><![CDATA[<center>
 <img alt="Its dangerous to go alone, take this! $ _" src="/images/terminal-quickstart.gif" />
 </center>
+<h2 id="references">References</h2>
+<p>Haven't looked at the content of these but they might help.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=UuJuq5wubaU&amp;list=PL78ppT-_wOmvlYSfyiLvkrsZTdQJ7A24L">https://www.youtube.com/watch?v=UuJuq5wubaU&amp;list=PL78ppT-_wOmvlYSfyiLvkrsZTdQJ7A24L</a></li>
+</ul>
 <h2 id="how-to-read-examples">How to read examples</h2>
 <p>You're about to see a lot of examples similar to this one</p>
 <pre><code class="language-console" data-lang="console">$ echo Hello World
@@ -1293,7 +1708,11 @@ decrease size of output file</p>
     <id>https://pdxjohnny.github.io/linux-kernel/</id>
     <updated>2020-10-06T08:00:00Z</updated>
     <published>2020-07-24T06:00:00Z</published>
-    <content type="html"><![CDATA[<h1 id="videos">Videos</h1>
+    <content type="html"><![CDATA[<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://linux-kernel-labs.github.io/refs/heads/master/index.html">https://linux-kernel-labs.github.io/refs/heads/master/index.html</a></li>
+</ul>
+<h1 id="videos">Videos</h1>
 <ul>
 <li>Kernel Recipes 2014 - The Linux Kernel, how fast it is developed and how we stay sane doing it
 <ul>
@@ -1303,6 +1722,11 @@ decrease size of output file</p>
 <li>LPC2019 - Reflections on kernel quality, development process and testing
 <ul>
 <li><a href="https://www.youtube.com/watch?v=iAfrrNdl2f4">https://www.youtube.com/watch?v=iAfrrNdl2f4</a></li>
+</ul>
+</li>
+<li>virtio
+<ul>
+<li><a href="https://blogs.oracle.com/linux/post/introduction-to-virtio">https://blogs.oracle.com/linux/post/introduction-to-virtio</a></li>
 </ul>
 </li>
 </ul>
@@ -1581,7 +2005,7 @@ though. It's covered in the main QEMU documenation at the top.</p>
 <p>The <code>root*</code> options here correspond to the
 <a href="#host-filesystem-passthrough">Host Filesystem Passthrough</a> section.</p>
 <pre><code>  -append \
-    &quot;console=ttyS0 rootfstype=9p root=/dev/root ro rootflags=trans=virtio,version=9p2000.u init=/usr/lib/systemd/systemd&quot;
+    &quot;console=ttyS0 rootfstype=9p root=fsdev-root ro rootflags=trans=virtio,version=9p2000.u init=/usr/lib/systemd/systemd&quot;
 </code></pre><h3 id="disable-gui">Disable GUI</h3>
 <pre><code>  -nographic
 </code></pre><h3 id="cpu-emulation">CPU Emulation</h3>
@@ -2101,7 +2525,12 @@ saying?</p>
 </code></pre><blockquote>
 <p>The <code>'</code> here are important! Or else your shell will replace <code>*</code> with every
 file in your current directory</p>
-</blockquote>]]></content>
+</blockquote>
+<h1 id="use-ssh-key-for-auth-always-accept-server-key">Use ssh key for auth always accept server key</h1>
+<p>Don't put anything you care about on this machine! You know
+what you're logging into.</p>
+<pre><code>ssh -i ~/.ssh/nahdig -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PasswordAuthentication=no root@143.198.133.87
+</code></pre>]]></content>
   </entry>
   <entry>
     <title>Python Pagination</title>
@@ -2224,6 +2653,9 @@ each result within a page.</p>
 or attribute in whatever way the license for whatever you found said.</p>
 <p>If you find something that's Public Domain, then you don't <em>have</em> to say where
 you got it.</p>
+<ul>
+<li><a href="https://www.openculture.com/">https://www.openculture.com/</a></li>
+</ul>
 <h2 id="images">Images</h2>
 <ul>
 <li><a href="https://free-images.com/">https://free-images.com/</a></li>
@@ -2240,7 +2672,9 @@ you got it.</p>
     <published>2020-07-07T19:00:00Z</published>
     <content type="html"><![CDATA[<h2 id="dos2unix-in-python">dos2unix in Python</h2>
 <p>Remove carrage returns from CRLF (carrage return, line feed: <code>\r\n</code>).</p>
-<pre><code class="language-consoele" data-lang="consoele">$ python -c 'import pathlib, sys; p = pathlib.Path(sys.argv[-1]); p.write_bytes(p.read_bytes().replace(b&quot;\r&quot;, b&quot;&quot;))' file.txt
+<pre><code class="language-console" data-lang="console">$ python -c 'import pathlib, sys; p = pathlib.Path(sys.argv[-1]); p.write_bytes(p.read_bytes().replace(b&quot;\r&quot;, b&quot;&quot;))' file.txt
+</code></pre><h2 id="get-list-of-available-versions">Get list of available versions</h2>
+<pre><code class="language-console" data-lang="console">$ python -m pip install dffml==
 </code></pre><h2 id="download-file-with-python-from-command-line-with-progress">Download file with Python from command line with progress</h2>
 <pre><code class="language-console" data-lang="console">$ python3 -c 'import sys, functools, urllib.request; print(urllib.request.urlretrieve(sys.argv[-1], reporthook=lambda n, c, t: print(f&quot;{round(((n*c)/t) * 100, 2)}%&quot;, end=&quot;\r&quot;, file=sys.stderr))[0])' https://storage.googleapis.com/laurencemoroney-blog.appspot.com/rps.zip
 </code></pre><p><a href="https://asciinema.org/a/357044"><img src="https://asciinema.org/a/357044.svg" alt="asciicast"></a></p>
@@ -2249,7 +2683,12 @@ you got it.</p>
 inside them.</p>
 <pre><code class="language-console" data-lang="console">$ git grep -A 25 -E 'dffml train|dffml accuracy|dffml predict' | python -c 'import sys; print(&quot;--&quot;.join([i for i in sys.stdin.read().split(&quot;--&quot;) if not &quot;model-directory&quot; in i]).strip())'
 </code></pre><h2 id="display-a-file-as-plain-text-in-a-browser">Display a file as plain text in a browser</h2>
-<pre><code class="language-console" data-lang="console">$ (echo -e 'HTTP/1.0 200 OK\n' &amp;&amp; cat myfile.txt) | nc -lp 8080
+<pre><code class="language-console" data-lang="console">$ (echo -e 'HTTP/1.0 200 OK\n' &amp;&amp; cat myfile.txt) | nc -Nlp 8080
+</code></pre><p>Redisplay on reload.</p>
+<ul>
+<li><code>-N</code> to netcat mean close socket on EOF from STDIN</li>
+</ul>
+<pre><code class="language-console" data-lang="console">$ nodemon -e md --exec &quot;clear; while test 1; do (echo -e 'HTTP/1.0 200 OK\n' &amp;&amp; cat open-architecture.md) | nc -Nlp 8000; sleep 0.5; done; test 1&quot;
 </code></pre><h2 id="do-a-vim-commands-on-files-in-an-automated-way">Do a vim commands on files in an automated way</h2>
 <p>Remove all newlines from end of file</p>
 <pre><code class="language-console" data-lang="console">$ for file in $(echo examples/notebooks/*.ipynb); do vim -b '+set noeol' '+wq' $file; done
@@ -2264,6 +2703,269 @@ inside them.</p>
     &quot;dffml-0.4.0.post0-py3-none-any.whl&quot;: &quot;https://files.pythonhosted.org/packages/37/d5/6dc945d453cbdeb15db4249fe09e07bdd2e750a6f256fd893c81ced7bbbb/dffml-0.4.0.post0-py3-none-any.whl#sha256=031dd3a4ca57d46f568f7dd2711a223a26bc343f5f2ac36e1af881ead19e05b6&quot;,
     &quot;dffml-0.4.0.post0.tar.gz&quot;: &quot;https://files.pythonhosted.org/packages/b0/42/a151555fe3b45926fa041813f8513d883180bdb9e8def64d2d5260609743/dffml-0.4.0.post0.tar.gz#sha256=f6f898c504450e3514dd5791b31bcba21ad9edfc3e896ac5da9cbe3181af5d2b&quot;
 }
+</code></pre><h2 id="sign-and-verify-data-using-ssh-keys">Sign and verify data using ssh keys</h2>
+<p>References:</p>
+<ul>
+<li><a href="https://www.agwa.name/blog/post/ssh_signatures">https://www.agwa.name/blog/post/ssh_signatures</a></li>
+</ul>
+<pre><code class="language-console" data-lang="console">$ podman run -v $HOME/.ssh/:/root/.ssh:ro -v $PWD:/usr/src/workdir -w /usr/src/workdir --rm -ti --entrypoint ssh-keygen lscr.io/linuxserver/openssh-server -Y sign -f /root/.ssh/mykeyname -n file CHANGELOG.md
+$ (printf 'alice@example.com ' &amp;&amp; cat ~/.ssh/mykeyname.pub) | tee allowed_signers
+$ cat CHANGELOG.md | podman run -v $HOME/.ssh/:/root/.ssh:ro -v $PWD:/usr/src/workdir -w /usr/src/workdir --rm -i --entrypoint ssh-keygen lscr.io/linuxserver/openssh-server -Y verify -f allowed_signers -I alice@example.com -n file -s CHANGELOG.md.sig
+Good &quot;file&quot; signature for alice@example.com with RSA key SHA256:RQsUY/opy5KWg+pesXcjI9I3I1z8udgkFAlOjDrv8cw
+</code></pre><h2 id="git-stash-show-patch">git stash show patch</h2>
+<p>Shows just applied patch</p>
+<pre><code class="language-console" data-lang="console">$ git stash show -p
+</code></pre><h2 id="wsl-start-sshd">wsl start sshd</h2>
+<p>From powershell:</p>
+<pre><code class="language-console" data-lang="console">$ Start-Job -ScriptBlock{wsl -u root -e mkdir -pv /run/sshd ; wsl -u root -e /usr/sbin/sshd -D}
+</code></pre><h2 id="wsl-forward-port">WSL Forward Port</h2>
+<p>Run the following from an Administrator PowerShell session</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span> <span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="n">listenaddress</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span> <span class="n">listenport</span><span class="p">=</span><span class="n">2222</span> <span class="n">connectaddress</span><span class="p">=((</span><span class="n">wsl</span> <span class="n">-u</span> <span class="n">root</span> <span class="p">--</span> <span class="n">sh</span> <span class="n">-c</span> <span class="s2">&#34;ip a | grep inet\ | grep -v 127.0.0&#34;</span><span class="p">).</span><span class="n">Split</span><span class="p">()[</span><span class="n">5</span><span class="p">].</span><span class="n">Split</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)[</span><span class="n">0</span><span class="p">])</span> <span class="n">connectport</span><span class="p">=</span><span class="n">22</span>
+
+<span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span> <span class="n">netsh</span> <span class="n">advfirewall</span> <span class="n">firewall</span> <span class="n">add</span> <span class="n">rule</span> <span class="n">name</span><span class="p">=</span><span class="s2">&#34;Open Port 2222 for WSL2&#34;</span> <span class="n">dir</span><span class="p">=</span><span class="k">in</span> <span class="n">action</span><span class="p">=</span><span class="n">allow</span> <span class="n">protocol</span><span class="p">=</span><span class="n">TCP</span> <span class="n">localport</span><span class="p">=</span><span class="n">2222</span>
+<span class="n">Ok</span><span class="p">.</span>
+
+<span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span> <span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">show</span> <span class="n">v4tov4</span>
+
+<span class="n">Listen</span> <span class="n">on</span> <span class="n">ipv4</span><span class="err">:</span>             <span class="n">Connect</span> <span class="n">to</span> <span class="n">ipv4</span><span class="err">:</span>
+
+<span class="n">Address</span>         <span class="n">Port</span>        <span class="n">Address</span>         <span class="n">Port</span>
+<span class="p">---------------</span> <span class="p">----------</span>  <span class="p">---------------</span> <span class="p">----------</span>
+<span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span>         <span class="n">2222</span>        <span class="n">172</span><span class="p">.</span><span class="n">23</span><span class="p">.</span><span class="n">21</span><span class="p">.</span><span class="n">232</span>   <span class="n">22</span>
+</code></pre></div><h2 id="github-cli-set-secrets">GitHub CLI set secrets</h2>
+<pre><code class="language-console" data-lang="console">$ grep oauth_token: &lt; ~/.config/gh/hosts.yml | sed -e 's/.*oauth_token: //g' | gh secret set MY_TOKEN
+</code></pre><p><strong>../secrets</strong></p>
+<pre><code>SECRET_NAME secret value
+</code></pre><pre><code class="language-console" data-lang="console">$ while IFS= read -r line; do gh secret set -R github.com/intel/dffml &quot;$(echo $line | sed -e 's/ .*//')&quot; --body &quot;$(echo $line | sed -e 's/[^ ]* //')&quot;; done &lt; ../secrets
+</code></pre><h2 id="return-repos-from-sourcegraph-query">Return repos from sourcegraph query</h2>
+<pre><code class="language-console" data-lang="console">$ curl 'https://sourcegraph.com/search/stream?q=context%3Aglobal%20repo%3A%5Egithub%5C.com%2Forg-name%2F.*%20log4j%20&amp;v=V2&amp;t=literal&amp;dl=0&amp;dk=html&amp;dc=1&amp;display=1500' | tee /tmp/org-name
+$ python -c 'import sys, json, itertools; print(&quot;\n&quot;.join(list(set(filter(bool, itertools.chain(*map(lambda data: list(map(lambda content: content.get(&quot;repository&quot;, &quot;&quot;), data)) if isinstance(data, list) else [], filter(bool, map(json.loads, map(lambda line: &quot;{}&quot; if not line.startswith(&quot;data: &quot;) else line.split(maxsplit=1)[-1], sys.stdin))))))))))' &lt; /tmp/org-name
+</code></pre><h2 id="commit-one-file-at-a-time">Commit one file at a time</h2>
+<pre><code class="language-console" data-lang="console">$ git add $(git status --porcelain=2 | grep -v \? | awk '{print $NF}' | head -n 1) &amp;&amp; git commit -sm &quot;$(git status --porcelain=2 | grep -v \? | awk '{print $NF}' | sed -e 's/dffml_source_mongodb\///g' -e 's/examples\/shouldi\///g' -e 's/\//: /g' -e 's/_/ /g' -e 's/\.py//g' | head -n 1): Format with black&quot;
+</code></pre><h2 id="run-command-on-line-in-vim">Run command on line in vim</h2>
+<p>Source: <a href="https://stackoverflow.com/questions/26809543/how-to-use-an-external-command-in-vim-to-modify-the-selection">https://stackoverflow.com/questions/26809543/how-to-use-an-external-command-in-vim-to-modify-the-selection</a></p>
+<pre><code>'&lt;,'&gt; !python3 -c 'import sys, datetime; print(&quot;\n&quot;.join([line_datetime[0].strip() for line_datetime in sorted([(line, datetime.datetime.strptime(line.split()[-1], &quot;\%Y-\%m-\%dT\%H:\%M:\%SZ&quot;)) for line in sys.stdin], key=lambda line_datetime: line_datetime[1])]))'
+</code></pre><pre><code>How to use an external command in Vim to modify the selection
+
+Something I've found useful in other editors is the ability to:
+
+take the selected text
+run an external command and pass the selection to its stdin
+take the external commands stdout and replace the current selection with it.
+This way you can write useful text tools which operate on the selection using any language that can do basic io.
+
+How can this be done with vim?
+
+(Directly in the command line, or via a key binding?)
+
+---
+
+:'&lt;,'&gt;!command
+
+'&lt;,'&gt; represents the (linewise) visual selection and is automatically inserted when you hit : and have something selected.
+
+Example:
+
+If you select a line containing:
+
+print(&quot;Hello!&quot;)
+
+and run the Vim command:
+
+:'&lt;,'&gt;!python
+
+the text will be replaced with Hello!.
+
+If you want to set this to a key-binding (F5 to evaluate for example)
+
+vnoremap &lt;F5&gt; :!python&lt;cr&gt;
+</code></pre><ul>
+<li>Example vim session insert, put this text, then press Escape key and type: <code>:'&lt;,'&gt; !bash</code></li>
+</ul>
+<pre><code>mkdir -p schema/image/container/build/
+cat &gt; schema/image/container/build/README.md&lt;&lt;'EOF'
+# Container Image Build Manifest
+EOF
+</code></pre><p>Use <code>tee</code> to replace output with existing and save sections of a file to smaller files</p>
+<pre><code>:'&lt;,'&gt; !tee output.txt
+</code></pre><p>Line select and calculate hash</p>
+<pre><code>curl -sfL https://download.fedoraproject.org/pub/fedora/linux/releases/36/Server/x86_64/iso/Fedora-Server-netinst-x86_64-36-1.5.iso | sha256sum -
+:'&lt;,'&gt; !bash
+</code></pre><p>Find replace multiple things at the same time</p>
+<pre><code>:'&lt;,'&gt; !sed -e 's/support/readme/g' -e 's/Support/Readme/g' -e 's/SUPPORT/README/g'
+</code></pre><h2 id="dump-github-comments-to-markdown-file">Dump GitHub comments to markdown file</h2>
+<pre><code class="language-console" data-lang="console">$ gh issue view https://github.com/intel/dffml/issues/1279 --json comments | jq -r '.comments[].body' | tr -d '\r' | sed -e 's/[[:space:]]*$//' -e 's/^#/\n\n#/g' | tee ~/comments.$(date &quot;+%4Y-%m-%d-%H-%M&quot;).md
+</code></pre><h2 id="print-the-date-in-a-yyyy-mm-dd-hh-ss-format">Print the date in a YYYY-MM-DD-HH-SS format</h2>
+<pre><code class="language-console" data-lang="console">$ date &quot;+%Y-%m-%d-%H-%M&quot;
+2022-02-02-06-34
+</code></pre><h2 id="reproducable-archive-via-ssh">Reproducable archive via ssh</h2>
+<p>Source: <a href="https://reproducible-builds.org/docs/archives/">https://reproducible-builds.org/docs/archives/</a></p>
+<pre><code class="language-console" data-lang="console">$ tar -C /some/dir/with/stuff -c --sort=name --mtime=&quot;2015-10-21 00:00Z&quot; --owner=0 --group=0 --numeric-owner --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime myfile.within.some.dir.with.stuff.exe | sshpass -p &quot;$(python -m keyring get $USER password)&quot; ssh -o StrictHostKeyChecking=no &quot;$USER@129.168.1.123&quot; python -c '
+import io
+import os
+import sys
+import tarfile
+import hashlib
+import pathlib
+import unittest
+import tempfile
+
+artifacts_contents = sys.stdin.buffer.read()
+
+unittest.TestCase().assertEqual(
+    hashlib.sha256(artifacts_contents).hexdigest(),
+    &quot;2bd972e3c980ee7dd376ca2c5988e2234d325d505f2124146abad226f1d163bb&quot;,
+    &quot;Artifact archive hash mismatch&quot;,
+)
+
+with tempfile.TemporaryDirectory() as tempdir:
+    os.chdir(tempdir)
+    with tarfile.open(fileobj=io.BytesIO(artifacts_contents), mode=&quot;r&quot;) as fileobj:
+        fileobj.extractall()
+        for path in pathlib.Path().rglob(&quot;*&quot;):
+            print(path.resolve())
+'
+</code></pre><h2 id="converting-datetimes-from-one-timezone-to-another-in-python">Converting datetimes from one timezone to another in Python</h2>
+<p>Example has local timezone as <code>-08:00</code> (PST).</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">,</span> <span class="n">tzinfo</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s1">&#39;2022-02-13T04:30&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">28</span><span class="p">))</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;-08:00&#34;</span>
+<span class="s1">&#39;2022-02-14T08:30:00-08:00&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s1">&#39;2022-02-13T04:30&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">28</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;+05:30&#34;</span>
+<span class="s1">&#39;2022-02-14T22:00:00+05:30&#39;</span>
+</code></pre></div><h2 id="xz-compressed-asciinema-recording">XZ compressed asciinema recording</h2>
+<p>Dotfiles: <a href="https://github.com/pdxjohnny/dotfiles/blob/cae7a366d7766bb1a82c478f0aedc6a829630677/.asciinema_source">https://github.com/pdxjohnny/dotfiles/blob/cae7a366d7766bb1a82c478f0aedc6a829630677/.asciinema_source</a></p>
+<p>Record (for remote: <code>ssh -t hostname</code>)</p>
+<pre><code class="language-console" data-lang="console">$ export REC_TITLE=&quot;&quot;; export REC_HOSTNAME=&quot;$(hostname)&quot;; python3.9 -m asciinema rec --idle-time-limit 0.5 --title &quot;$(date -Iseconds): ${REC_HOSTNAME} ${REC_TITLE}&quot; --command &quot;sh -c 'tmux a || tmux'&quot; &gt;(xz --stdout - &gt; &quot;$HOME/asciinema/${REC_HOSTNAME}-rec-$(date -Iseconds).json.xz&quot;)
+</code></pre><p>Check size</p>
+<pre><code class="language-console" data-lang="console">du -h ~/Downloads/ascii*
+</code></pre><p>Playback</p>
+<pre><code class="language-console" data-lang="console">xz --stdout -d - &lt; ~/Downloads/asci* | python -m asciinema play -s 20 -
+</code></pre><h2 id="obs-studio">OBS Studio</h2>
+<p><a href="https://snoober.home.blog/">https://snoober.home.blog/</a></p>
+<h2 id="wsl-ssh">wsl ssh</h2>
+<pre><code class="language-console" data-lang="console">$ wsl -u root -- mkdir -pv /run/sshd; wsl -u root -- /usr/sbin/sshd -D -o ListenAddress=0.0.0.0
+</code></pre><h2 id="parse-time-with-timezone">Parse time with timezone</h2>
+<pre><code class="language-console" data-lang="console">$ python -c 'import sys, datetime; print(datetime.datetime.strptime(sys.argv[-1], &quot;%d %b %Y %H:%M:%S %z&quot;))' '11 Jan 2022 00:44:19 +0800'
+2022-01-11 00:44:19+08:00
+</code></pre><h2 id="date-command">date command</h2>
+<pre><code class="language-console" data-lang="console">$ date &quot;+%4Y-%m-%d-%H-%M&quot;
+</code></pre><h2 id="file-transfer-with-progress">File transfer with progress</h2>
+<p>Machine sending file.</p>
+<pre><code class="language-console" data-lang="console">$ nc -Nlp 9999 &lt; filename
+</code></pre><p>Machine receiveing file.</p>
+<pre><code class="language-console" data-lang="console">$ dd status=progress bs=1M if=&lt;(cat &lt; /dev/tcp/example.com/9999) of=/mnt/c/Users/$USER/Downloads/filename
+</code></pre><h2 id="work-on-one-branch-and-make-change-on-other-branch-push-to-github-and-run-ci">Work on one branch and make change on other branch push to github and run CI</h2>
+<pre><code class="language-console" data-lang="console">$ nodemon -e yml --exec &quot;clear; export branch=feedface; git branch -D $branch; git checkout upstream/main-test -b $branch; python -c 'print(\&quot;A\&quot; + (\&quot;R\&quot; * (2**8)))' &gt; ahoy-there-matey-its-me-file; git add . &amp;&amp; git commit -sam &quot;${branch}&quot; &amp;&amp; git push -d origin &quot;${branch}&quot;; git push -fu origin $(git status | head -n 1 | awk '{print $NF}') &amp;&amp; gh pr create --base main-test --title &quot;$branch&quot; -F /dev/null&quot;
+</code></pre><h2 id="download-and-install-an-autotools-project-with-a-vendored-autoreconf--i">Download and install an autotools project with a vendored <code>autoreconf -i</code></h2>
+<pre><code class="language-console" data-lang="console">$ export tempdir=$(mktemp -d); (cd $tempdir &amp;&amp; curl -sfL 'https://www.kernel.org/pub/software/scm/git/git-2.36.0.tar.gz' | tar xz &amp;&amp; cd git* &amp;&amp; ./configure --prefix=$tempdir &amp;&amp; make -j $(($(nproc)*4)) &amp;&amp; ./git version &amp;&amp; echo $tempdir | tee /tmp/git_pwd &amp;&amp; sudo chmod a+rx -R $tempdir) &amp;&amp; sudo chmod a+r /tmp/git_pwd
+</code></pre><p>A non autoconf project using <a href="https://www.gnu.org/prep/standards/html_node/Directory-Variables.html#Directory-Variables">https://www.gnu.org/prep/standards/html_node/Directory-Variables.html#Directory-Variables</a> for
+<code>prefix      ?= /usr/local</code></p>
+<pre><code class="language-console" data-lang="console">$ export tempdir=$(mktemp -d); (cd $tempdir &amp;&amp; curl -sfL https://github.com/stefanhaustein/TerminalImageViewer/archive/refs/tags/v1.1.1.tar.gz | tar xz &amp;&amp; cd Terminal*/src/main/cpp &amp;&amp; make -j $(($(nproc)*4)) &amp;&amp; make install prefix=$tempdir)
+install -D tiv /tmp/tmp.ONSIPt2W5E/bin/tiv
+</code></pre><h2 id="near-local-github-actions-debug">Near local github actions debug</h2>
+<pre><code class="language-console" data-lang="console">$ gh run rerun --failed $(gh run list | head -n 2 | tail -n 1 | awk '{print $(NF-2)}')
+$ gh run watch --exit-status -i 1 $(gh run list | head -n 2 | tail -n 1 | awk '{print $(NF-2)}')
+$ gh run view $(gh run list | head -n 2 | tail -n 1 | awk '{print $(NF-2)}')
+$ gh run view --log $(gh run list | head -n 2 | tail -n 1 | awk '{print $(NF-2)}')
+</code></pre><pre><code class="language-console" data-lang="console">gh run view --log-failed $(gh run list --workflow feedface.yml | head -n 1| awk '{print $(NF-2)}')
+</code></pre><h2 id="find-the-binaries">Find the binaries</h2>
+<p><strong>TODO</strong> CVE Bin Tool approach</p>
+<pre><code class="language-console" data-lang="console">$ file $(find $tempdir -name git)
+/tmp/tmp.2Wd0hLb8oN/bin/git:                                      ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=c1357c209d816a9738b0af78d017a6c2bfba71e7, with debug_info, not stripped
+/tmp/tmp.2Wd0hLb8oN/git-2.36.0/bin-wrappers/git:                  POSIX shell script, ASCII text executable
+/tmp/tmp.2Wd0hLb8oN/git-2.36.0/git:                               ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=c1357c209d816a9738b0af78d017a6c2bfba71e7, with debug_info, not stripped
+/tmp/tmp.2Wd0hLb8oN/git-2.36.0/contrib/mw-to-git/bin-wrapper/git: POSIX shell script, ASCII text executable
+/tmp/tmp.2Wd0hLb8oN/libexec/git-core/git:                         ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=c1357c209d816a9738b0af78d017a6c2bfba71e7, with debug_info, not stripped
+</code></pre><h2 id="unix-anyone-can-execute-and-read-anything-in-these-dirs">UNIX anyone can execute and read anything in these dirs</h2>
+<pre><code class="language-console" data-lang="console">$ chmod -R a+rx $dir
+</code></pre><h2 id="debugging-actions-self-hosted-runners">Debugging actions self-hosted runners</h2>
+<pre><code class="language-console" data-lang="console">$ gh run rerun --failed $(gh run list | head -n 2 | tail -n 1 | awk '{print $(NF-2)}') &amp;&amp; sleep 1 &amp;&amp; gh run watch --exit-status -i 1 $(gh run list | head -n 2 | tail -n 1 | awk '{print $(NF-2)}') || gh run view --log $(gh run list | head -n 2 | tail -n 1 | awk '{print $(NF-2)}')
+</code></pre><h2 id="used-the-menu-button-on-the-keyboard-for-the-first-time-ever-today">Used the menu button on the keyboard for the first time ever today</h2>
+<p><a href="https://support.google.com/chrome/answer/10483214?hl=en">https://support.google.com/chrome/answer/10483214?hl=en</a></p>
+<h2 id="edit-a-file-only-if-autoformating-passes">Edit a file only if autoformating passes</h2>
+<p>Can be used to hand edit xxd as well if you wanted to</p>
+<pre><code class="language-console" data-lang="console">$ cp old-admin.json old-old-admin.json; cp ~/.local/admin.json old-admin.json &amp;&amp; python -m json.tool old-admin.json &gt; admin.json || cp old-admin.json admin.json &amp;&amp; cp admin.json staged.json &amp;&amp; vim staged.json &amp;&amp; python -m json.tool &lt; staged.json &gt; admin.json &amp;&amp; cp admin.json ~/.local/admin.json
+</code></pre><h2 id="quick-pop-shell-from-python">Quick pop shell from python</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s2">&#34;/tmp&#34;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;bash -c &#39;cd {directory}; pwd; exec bash&#39;&#34;</span><span class="p">)</span>
+</code></pre></div><h2 id="capture-output-of-shell-stderr-and-out-to-file-by-datestamp">Capture output of shell stderr and out to file by datestamp</h2>
+<p>Combine with bash history to create Alice herstory as fully connected view.</p>
+<pre><code class="language-console" data-lang="console">$ nodemon -e py --exec 'clear; alice please contribute -log debug -repos https://github.com/pdxjohnny/testa -- recommended community standards 2&gt;&amp;1 | tee .output/$(date +%4Y-%m-%d-%H-%M).txt; test 1'
+</code></pre><pre><code class="language-console" data-lang="console">$ grep -n -C 5 -i contribute_readme_md $(find .output/ | sort | tail -n 1)
+</code></pre><h2 id="python-reverse-lines-in-file">Python reverse lines in file</h2>
+<pre><code class="language-console" data-lang="console">$ python -c 'import sys; print(&quot;&quot;.join(list(filter(bool, sys.stdin))[::-1]))' &lt; commits.txt | tee commits-ordered.txt
+</code></pre><h2 id="cherry-pick-the-last-two-commits">Cherry pick the last two commits</h2>
+<pre><code class="language-console" data-lang="console">$ git cherry-pick branchname~2..branchname
+</code></pre><h2 id="print-git-log-with-links-to-commits-on-github">Print git log with links to commits on github</h2>
+<pre><code class="language-console" data-lang="console">$ export remote=&quot;$(git remote get-url $(git remote))&quot; &amp;&amp; git log --pretty=oneline -n 2 | sed -e &quot;s#^#${remote}/commit/#&quot;
+</code></pre><h2 id="you-can-drag-files-videos-even-right-into-a-markdown-document-to-uploda-them-to-github">You can drag files (videos even) right into a markdown document to uploda them to github</h2>
+<h2 id="download-a-python-package-with-curl-and-verify-the-contents-using-the-sha">Download a python package with curl and verify the contents using the SHA</h2>
+<p>Sometimes downloading a package with pip will fail.</p>
+<pre><code class="language-console" data-lang="console">$ ulimit -c unlimited
+$ python -m pip download torch
+Collecting torch
+  Downloading torch-1.12.1-cp39-cp39-manylinux1_x86_64.whl (776.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ 776.3/776.4 MB 13.0 MB/s eta 0:00:01Killed
+</code></pre><p>Look for the path to the download you want.</p>
+<pre><code class="language-console" data-lang="console">$ curl -sfL https://pypi.org/simple/torch/ | grep torch-1.12.1-cp39-cp39-manylinux1_x86_64.whl
+    &lt;a href=&quot;https://files.pythonhosted.org/packages/1e/2f/06d30fbc76707f14641fe737f0715f601243e039d676be487d0340559c86/torch-1.12.1-cp39-cp39-manylinux1_x86_64.whl#sha256=9b356aea223772cd754edb4d9ecf2a025909b8615a7668ac7d5130f86e7ec421&quot; data-requires-python=&quot;&amp;gt;=3.7.0&quot; &gt;torch-1.12.1-cp39-cp39-manylinux1_x86_64.whl&lt;/a&gt;&lt;br /&gt;
+</code></pre><p>Download the package.</p>
+<pre><code class="language-console" data-lang="console">$ curl -fLOC - https://files.pythonhosted.org/packages/1e/2f/06d30fbc76707f14641fe737f0715f601243e039d676be487d0340559c86/torch-1.12.1-cp39-cp39-manylinux1_x86_64.whl
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  740M  100  740M    0     0  85.1M      0  0:00:08  0:00:08 --:--:--  106M
+
+Verify the SHA appended to our downloaded URL from our inital command.
+
+```console
+$ sha256sum -c - &lt;&lt;&lt;'9b356aea223772cd754edb4d9ecf2a025909b8615a7668ac7d5130f86e7ec421  torch-1.12.1-cp39-cp39-manylinux1_x86_64.whl'
+torch-1.12.1-cp39-cp39-manylinux1_x86_64.whl: OK
+</code></pre><p>Install the package</p>
+<pre><code class="language-console" data-lang="console">$ python -m pip install ./torch-1.12.1-cp39-cp39-manylinux1_x86_64.whl
+</code></pre><p>Now it should appear to pip as installed</p>
+<pre><code class="language-console" data-lang="console">$ python -m pip install -U pip setuptools wheel
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pip in /.pyenv/versions/3.9.13/lib/python3.9/site-packages (22.2.1)
+Collecting pip
+  Downloading pip-22.2.2-py3-none-any.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 10.3 MB/s eta 0:00:00
+Requirement already satisfied: setuptools in /.pyenv/versions/3.9.13/lib/python3.9/site-packages (63.2.0)
+Collecting setuptools
+  Downloading setuptools-65.3.0-py3-none-any.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 16.5 MB/s eta 0:00:00
+Requirement already satisfied: wheel in /.pyenv/versions/3.9.13/lib/python3.9/site-packages (0.37.1)
+Installing collected packages: setuptools, pip
+Successfully installed pip-22.2.2 setuptools-65.3.0
+
+[notice] A new release of pip available: 22.2.1 -&gt; 22.2.2
+[notice] To update, run: pip install --upgrade pip
+$ pip install torch==1.12.1
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: torch==1.12.1 in ./.local/lib/python3.9/site-packages (1.12.1)
+Requirement already satisfied: typing-extensions in ./.local/lib/python3.9/site-packages (from torch==1.12.1) (4.3.0)
+</code></pre><h2 id="read-markdown-in-terminal">Read markdown in terminal</h2>
+<pre><code class="language-console" data-lang="console">curl -sfL https://github.com/openai/whisper/raw/main/README.md | python -m rich.markdown /dev/stdin | less -r
+</code></pre><h2 id="windows-disable-taskbar-icon-blinking">Windows disable taskbar icon blinking</h2>
+<p>Source: <a href="https://answers.microsoft.com/en-us/msteams/forum/all/how-to-stop-teams-from-blinking-in-taskbars-when/decc661a-7c4a-4f7e-a729-afdee2f14824">https://answers.microsoft.com/en-us/msteams/forum/all/how-to-stop-teams-from-blinking-in-taskbars-when/decc661a-7c4a-4f7e-a729-afdee2f14824</a></p>
+<blockquote>
+<p>Rudy (can't fail): Please edit the value of ForegroundFlashCount from the HKEY_CURRENT_USER\Control Panel\Desktop registry to the value of 1, then the icon will flash once. Which can reduce the number of icon flashing. Note: Setting to 0 will make the icon continuously flash. If you still need to stop Teams' icon flash, for this Windows OS related question, we will move this thread back to the original category. Meanwhile, if you don't want to use Teams client, actually, you can let it run in background via selecting the &quot;Open application in background&quot; options in Settings &gt; General.</p>
+</blockquote>
+<h2 id="display-date-with-timezone">Display date with timezone</h2>
+<pre><code class="language-console" data-lang="console">$ date -Iseconds
+2022-10-05T22:30:42-07:00
+</code></pre><h2 id="reboot-to-bios">Reboot to BIOS</h2>
+<p>Source: <a href="https://twitter.com/ADurrante/status/1578052630043140101?s=20&amp;t=Ypq4nyTINjL_gPctxvvN1A">https://twitter.com/ADurrante/status/1578052630043140101?s=20&amp;t=Ypq4nyTINjL_gPctxvvN1A</a></p>
+<pre><code class="language-console" data-lang="console">$ shutdown /r /fw /f /t 0
+</code></pre><h2 id="git-push-to-current-branch">Git push to current branch</h2>
+<pre><code class="language-console" data-lang="console">$ git push -u origin $(git branch | grep -E '^\*' | sed -e 's/\* //')
+</code></pre><h2 id="ssh-port-forward-remote-port-to-enable-connection-via-local-port"><code>ssh</code> port forward remote port to enable connection via local port</h2>
+<pre><code class="language-console" data-lang="console">$ ssh -nNT -L 8000::8000 target
+</code></pre><h2 id="json-to-yaml-with-python-cli">JSON to YAML with Python CLI</h2>
+<p>Source: <a href="https://github.com/intel/dffml/blob/8847989eb4cc9f6aa484285ba9c11ff920113ed3/docs/arch/0008-Manifest.md">https://github.com/intel/dffml/blob/8847989eb4cc9f6aa484285ba9c11ff920113ed3/docs/arch/0008-Manifest.md</a></p>
+<pre><code class="language-console" data-lang="console">$ python -c &quot;import sys, pathlib, json, yaml; print(yaml.dump(json.load(sys.stdin)))&quot; &lt; manifest.json
+</code></pre><h2 id="post-wip-diff-to-pull-request">Post WIP diff to Pull Request</h2>
+<pre><code class="language-console" data-lang="console">$ (echo '```diff' &amp;&amp; git diff &amp;&amp; echo '```') | gh pr comment -F -
 </code></pre>]]></content>
   </entry>
   <entry>
@@ -2296,7 +2998,8 @@ inside them.</p>
 them side by side, have tabs, label them, etc.</li>
 <li><a href="https://github.com/tmux/tmux/wiki">tmux</a>
 <ul>
-<li><a href="https://gist.github.com/MohamedAlaa/2961058">Cheatsheet</a></li>
+<li><a href="https://gist.github.com/MohamedAlaa/2961058">Cheatsheet by Mohamed Hassan</a></li>
+<li><a href="https://github.com/git-pull/tao-of-tmux">The Tao of tmux by Tony Narlock</a></li>
 </ul>
 </li>
 </ul>
@@ -2383,6 +3086,19 @@ and documenation.</li>
 being prefixed with a <code>.</code>. This is because on UNIX operating systems, files
 prefixed with a <code>.</code> are <em>hidden</em>.</p>
 <p>Here are mine: <a href="http://github.com/pdxjohnny/dotfiles">http://github.com/pdxjohnny/dotfiles</a></p>
+<h2 id="linux-distros">Linux distros</h2>
+<p>These days I stick mostly to the big three desktop distros, debian, ubuntu, and
+fedora. I used to run Solus on my personal, it's out of commision at the moment
+and I am waiting until Serpent OS releases <code>.iso</code> images to bring it back up
+again.</p>
+<p>I started using Fedora when I was doing the CR0/4 KVM work. Kristen and Rick told
+me that Fedora gaurentees that you'll be able to run the
+<a href="./linux-kernel/#terminology">upstream kernel</a>. Unless you want to mess with
+building <code>.deb</code> files on ubuntu so that you have all their configs and patches,
+which sounds not fun to me, it's probably best to stick to a well supported distro
+that you can just do a clean build of the linux tree and run the kernel on. But
+I've been busy trying to get CI ironed out for that project so I haven't gotten
+back to running on fedora in a while.</p>
 <h2 id="reasoning">Reasoning</h2>
 <p>I forced myself to get used to a primarily terminal based development
 environment because I constantly find myself on systems where I have either only
@@ -2423,7 +3139,94 @@ open one browser window for all the docs, web based chats, etc. The beauty of
 this is you only ever have two windows open. Which means whenever you hit
 Alt-Tab you never have to guess where your going to end up! This is going to
 save you insane amounts of time in the long run. Ditch the clutter. Hakuna
-Matata.</p>]]></content>
+Matata.</p>
+<h2 id="notes">Notes</h2>
+<p>TAKE NOTES. NOTES ARE A SUPERPOWER. WHAT IS NOT WRITTEN DOWN IS LOST.
+WHAT IS NOT ORGANIZED IS LOST. THOSE WHO WANDER ARE LOST WITHOUT NOTES!</p>
+<h3 id="format">Format</h3>
+<blockquote>
+<p><a href="https://github.com/intel/dffml/discussions/1369#discussioncomment-2675744">https://github.com/intel/dffml/discussions/1369#discussioncomment-2675744</a></p>
+</blockquote>
+<pre><code># YYYY-MM-DD Title or Meeting Name
+
+- NTT
+  - Ensure each of these are brought up
+- Topic 1
+  - Notes go here organized by topic
+- TODO
+  - Generic future actions
+- Next Steps
+  - ARs
+    - Name will ...
+  - Generic near term future actions
+</code></pre><h4 id="shorthand">Shorthand</h4>
+<p>NTT - Need To Talk about these things in the meeting, checklist of things
+that must be addressed or brought up</p>
+<h2 id="new-dev-box-bring-up">New dev box bring up</h2>
+<p>This is me attempting to collect all the things I do when I set up a new
+machine for development.</p>
+<p>I should just put this in a container and then extract the layer over the
+homedir via curl + tar.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">NAME_FIRST_LAST</span><span class="o">=</span><span class="s2">&#34;John Andersen&#34;</span>
+<span class="nv">EMAIL</span><span class="o">=</span>johnandersenpdx@gmail.com
+
+<span class="c1"># Install GitHub CLI</span>
+<span class="c1"># https://github.com/cli/cli/blob/trunk/docs/install_linux.md</span>
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/usr/share/keyrings/githubcli-archive-keyring.gpg
+<span class="nb">echo</span> <span class="s2">&#34;deb [arch=</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/github-cli.list &gt; /dev/null
+sudo apt update
+sudo apt install -y gh
+
+<span class="c1"># Log into GitHub</span>
+gh auth login
+
+<span class="c1"># Configure git</span>
+git config user.name <span class="nv">$NAME_FIRST_LAST</span>
+git config user.email <span class="nv">$EMAIL</span>
+
+<span class="c1"># Clone dotfiles</span>
+git clone https://github.com/pdxjohnny/dotfiles ~/.dotfiles
+<span class="nb">cd</span> ~/.dotfiles
+./install.sh
+<span class="nv">dotfiles_branch</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>-<span class="k">$(</span>date <span class="s2">&#34;+%4Y-%m-%d-%H-%M&#34;</span><span class="k">)</span>
+git checkout -b <span class="nv">$dotfiles_branch</span>
+git push --set-upstream origin <span class="nv">$dotfiles_branch</span>
+
+<span class="c1"># Modify dotfiles for host</span>
+<span class="c1"># Open tmux and copy based the errors into invalid</span>
+<span class="c1"># cat &gt; /tmp/invalid &lt;&lt;&#39;EOF&#39;</span>
+<span class="c1"># EOF</span>
+<span class="c1"># grep -vE $(invalid=$(&lt; /tmp/invalid); invalid=${invalid/$&#39;\n&#39;/ }; echo $invalid | sed -e &#39;s/ /|/g&#39; &lt; ~/.tmux.conf) \</span>
+<span class="c1">#   | (temp_conf=$(mktemp); cat &gt; $temp_conf \</span>
+<span class="c1">#      &amp;&amp; truncate  --no-create -s 0 ~/.tmux.conf \</span>
+<span class="c1">#      &amp;&amp; tee -a  ~/.tmux.conf &lt; $temp_conf)</span>
+sed -i <span class="s2">&#34;s/Dot Files/Dot Files: </span><span class="nv">$dotfiles_branch</span><span class="s2">/g&#34;</span> README.md
+<span class="c1"># Save modifications</span>
+<span class="nb">cd</span> ~/.dotfiles
+git commit -sam <span class="s2">&#34;Initial auto-tailor for </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&#34;</span>
+git push
+</code></pre></div><h3 id="todo">TODO</h3>
+<ul>
+<li>
+<p>dataflows</p>
+<ul>
+<li>
+<p>tool install per-distro</p>
+</li>
+<li>
+<p>login tasks (<code>~./bashrc</code> run something with <code>&amp;</code> to background)</p>
+<ul>
+<li>
+<p>Check if everything in homedir is either tracked in git or explictly ignored</p>
+<ul>
+<li>notify-send or equivilent, easy bash pipe allowed triage</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>]]></content>
   </entry>
   <entry>
     <title>Clear Containers on Arch Linux</title>
