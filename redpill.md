@@ -16,6 +16,15 @@ There are many ways to enter the machine. All of them start with curiosity and l
 <details>
 <summary>:pill:</summary>
 
+> Ask and it will be given to you; seek and you will find;
+> knock and the door will be opened to you.
+>
+> For everyone who asks, receives. Everyone who seeks, finds.
+> And to everyone who knocks, the door will be opened.
+
+<details>
+<summary>:door:</summary>
+
 - L810
 - J123
   - https://github.com/intel/dffml/blob/8decd22e31196fdfebaac7249c4dde3cc5aa04b7/docs/arch/alice/discussion/0042/index.md#L51-L52
@@ -44,6 +53,7 @@ There are many ways to enter the machine. All of them start with curiosity and l
 
 ![Woman_fighting_Dragon_and_Winning](https://user-images.githubusercontent.com/5950433/204717288-bcba1d39-d89a-40d2-9879-021dc0608066.jpg)
 
+</details>
 </details>
 </details>
 </details>
