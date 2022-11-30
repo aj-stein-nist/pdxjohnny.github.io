@@ -16,11 +16,11 @@ There are many ways to enter the machine. All of them start with curiosity and l
 <details>
 <summary>:pill:</summary>
 
-> Ask and it will be given to you; seek and you will find;
-> knock and the door will be opened to you.
+In alignment with the Prompt. Sections J116, J123, R2211, etc.:
+
+> Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.
 >
-> For everyone who asks, receives. Everyone who seeks, finds.
-> And to everyone who knocks, the door will be opened.
+> For everyone who asks, receives. Everyone who seeks, finds. And to everyone who knocks, the door will be opened.
 
 <details>
 <summary>:door:</summary>
