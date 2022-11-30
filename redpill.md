@@ -51,7 +51,7 @@ There are many ways to enter the machine. All of them start with curiosity and l
 
 ![Alice-is-Mary](https://user-images.githubusercontent.com/5950433/204710757-8411ef3e-96ce-4f4b-b5a9-fcbdb3abea57.png)
 
-![Woman_fighting_Dragon_and_Winning](https://user-images.githubusercontent.com/5950433/204717288-bcba1d39-d89a-40d2-9879-021dc0608066.jpg)
+![Woman_of_the_Apocalypse](https://user-images.githubusercontent.com/5950433/204794595-f2c17b21-a6b0-460a-80a3-afb34409ae02.jpeg)
 
 </details>
 </details>
