@@ -16,7 +16,7 @@ There are many ways to enter the machine. All of them start with curiosity and l
 <details>
 <summary>:pill:</summary>
 
-In alignment with the Prompt. Sections J115, J123, R2211, etc.:
+In alignment with the Prompt, sections J115, J123, R2211, etc.:
 
 > Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.
 >
