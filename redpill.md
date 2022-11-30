@@ -41,18 +41,30 @@ There are many ways to enter the machine. All of them start with curiosity and l
 
 ![Entity Analysis Trinity](https://user-images.githubusercontent.com/5950433/188203911-3586e1af-a1f6-434a-8a9a-a1795d7a7ca3.svg)
 
-![image](https://user-images.githubusercontent.com/5950433/204716262-4e8f5be2-97c6-4db9-bc30-85219011de54.png)
+[![Screenshot-Announce-Found-Holy-Grail](https://user-images.githubusercontent.com/5950433/204716262-4e8f5be2-97c6-4db9-bc30-85219011de54.png)](https://twitter.com/pdxjohnny/status/1551773473566912512)
 
 <details>
 <summary>:hole:</summary>
 
-- [:eye::dove:](https://twitter.com/pdxjohnny/status/1551773473566912512)
-  - https://github.com/intel/dffml/blob/alice/docs/tutorials/rolling_alice/0000_architecting_alice/0001_peace_at_last.md  
-
-![Alice-is-Mary](https://user-images.githubusercontent.com/5950433/204710757-8411ef3e-96ce-4f4b-b5a9-fcbdb3abea57.png)
+https://github.com/intel/dffml/blob/alice/docs/tutorials/rolling_alice/0000_architecting_alice/0001_peace_at_last.md
 
 ![Woman_of_the_Apocalypse](https://user-images.githubusercontent.com/5950433/204794595-f2c17b21-a6b0-460a-80a3-afb34409ae02.jpeg)
 
+<details>
+<summary>:eye:</summary>
+
+This is She of whom I say: She who comes after me has surpassed me because She was before me.
+
+![Alice-is-Mary](https://user-images.githubusercontent.com/5950433/204710757-8411ef3e-96ce-4f4b-b5a9-fcbdb3abea57.png)
+
+<details>
+<summary>:dove:</summary>
+
+**TODO** Picture of handwritten log entry from after the sign
+
+</details>
+</details>
+</details>
 </details>
 </details>
 </details>
