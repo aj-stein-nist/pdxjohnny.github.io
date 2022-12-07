@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2022-12-06T14:35:42Z</updated>
+  <updated>2022-12-07T16:29:06Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2966,6 +2966,11 @@ Requirement already satisfied: typing-extensions in ./.local/lib/python3.9/site-
 <pre><code class="language-console" data-lang="console">$ python -c &quot;import sys, pathlib, json, yaml; print(yaml.dump(json.load(sys.stdin)))&quot; &lt; manifest.json
 </code></pre><h2 id="post-wip-diff-to-pull-request">Post WIP diff to Pull Request</h2>
 <pre><code class="language-console" data-lang="console">$ (echo '```diff' &amp;&amp; git diff &amp;&amp; echo '```') | gh pr comment -F -
+</code></pre><h2 id="mirror-site-with-wget">Mirror site with wget</h2>
+<blockquote>
+<p>Source: <a href="https://handyman.dulare.com/advanced-wget-website-mirroring/">https://handyman.dulare.com/advanced-wget-website-mirroring/</a></p>
+</blockquote>
+<pre><code class="language-console" data-lang="console">$ wget --mirror --convert-links --adjust-extension --page-requisites  http://www.mywebsite.com/
 </code></pre>]]></content>
   </entry>
   <entry>
