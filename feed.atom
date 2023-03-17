@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-03-17T20:06:52Z</updated>
+  <updated>2023-03-17T20:07:45Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -3180,7 +3180,9 @@ homedir via curl + tar.</p>
 <span class="nv">EMAIL</span><span class="o">=</span>johnandersenpdx@gmail.com
 
 <span class="c1"># Create homedir venv</span>
-python -m venv ~/.venv <span class="o">||</span> python3 -m venv ~/.venv
+mkdir -p ~/.local/.venv
+python -m venv ~/.local/.venv <span class="o">||</span> python3 -m venv ~/.local/.venv
+. ~/.local/.venv/bin/activate
 python -m pip install -U pip setuptools wheel
 python -m pip install -U keyring keyrings-alt
 
