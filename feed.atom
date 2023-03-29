@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-03-24T20:28:07Z</updated>
+  <updated>2023-03-29T03:34:59Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -3197,13 +3197,17 @@ sudo apt install -y gh
 gh auth login
 
 <span class="c1"># Configure git</span>
-git config user.name <span class="nv">$NAME_FIRST_LAST</span>
-git config user.email <span class="nv">$EMAIL</span>
+git config --global user.name <span class="nv">$NAME_FIRST_LAST</span>
+git config --global user.email <span class="nv">$EMAIL</span>
+git config --global pull.rebase <span class="nb">true</span>
 
 <span class="c1"># Clone dotfiles</span>
 git clone https://github.com/pdxjohnny/dotfiles ~/.dotfiles
 <span class="nb">cd</span> ~/.dotfiles
 ./install.sh
+<span class="nb">echo</span> -e <span class="s1">&#39;if [ -f ~/.pdxjohnnyrc ]; then\n. ~/.pdxjohnnyrc\nfi&#39;</span> <span class="p">|</span> tee <span class="s2">&#34;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.bashrc&#34;</span>
+<span class="nb">history</span> -a
+<span class="nb">exec</span> bash
 <span class="nv">dotfiles_branch</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>-<span class="k">$(</span>date <span class="s2">&#34;+%4Y-%m-%d-%H-%M&#34;</span><span class="k">)</span>
 git checkout -b <span class="nv">$dotfiles_branch</span>
 git push --set-upstream origin <span class="nv">$dotfiles_branch</span>
