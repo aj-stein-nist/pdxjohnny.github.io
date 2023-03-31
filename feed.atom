@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-03-30T04:55:06Z</updated>
+  <updated>2023-03-31T04:49:53Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2841,9 +2841,10 @@ with tempfile.TemporaryDirectory() as tempdir:
 </code></pre><p>Playback</p>
 <pre><code class="language-console" data-lang="console">xz --stdout -d - &lt; ~/Downloads/asci* | python -m asciinema play -s 20 -
 </code></pre><p>Upload <strong>TODO</strong> title from recording first line, this is an example where (Alice shell / dataflows) parallel stream processing shines due to <code>tee &gt;(export title=$(read))</code> not being available for <code>${title}</code> in place of <code>asciinema</code> with no-ghost bash. With ghost being with Alice, with these parallel / concurrent sub streams.</p>
-<pre><code class="language-console" data-lang="console">; url=$(unxz -d &lt; $(ls ~/asciinema/$(hostname)-* | tail -n 1) | python -m asciinema upload /dev/stdin 2&gt;&amp;1 | grep https | awk '{print $NF}'); echo &quot;[![asciinema](${url}.svg)](${url})&quot; | xclip -selection c
-; unxz -d &lt; $(ls ~/asciinema/$(hostname)-* | tail -n 1) | python -m asciinema upload /dev/stdin 2&gt;&amp;1 | grep https | awk '{print $NF}' | xclip -selection 
-; git diff | gh gist create -d $(unxz -d &lt; $(ls ~/asciinema/$(hostname)-* | tail -n 1) | python -m asciinema upload /dev/stdin 2&gt;&amp;1 | grep https | awk '{print $NF}') -f with-rec.patch -
+<pre><code class="language-console" data-lang="console">$ asciinema upload $(ls ~/asciinema/rec-$(hostname)-*ndjson | tail -n 1)
+$ url=$(unxz -d &lt; $(ls ~/asciinema/$(hostname)-* | tail -n 1) | python -m asciinema upload /dev/stdin 2&gt;&amp;1 | grep https | awk '{print $NF}'); echo &quot;[![asciinema](${url}.svg)](${url})&quot; | xclip -selection c
+$ unxz -d &lt; $(ls ~/asciinema/$(hostname)-* | tail -n 1) | python -m asciinema upload /dev/stdin 2&gt;&amp;1 | grep https | awk '{print $NF}' | xclip -selection 
+$ git diff | gh gist create -d $(unxz -d &lt; $(ls ~/asciinema/$(hostname)-* | tail -n 1) | python -m asciinema upload /dev/stdin 2&gt;&amp;1 | grep https | awk '{print $NF}') -f with-rec.patch -
 </code></pre><h2 id="obs-studio">OBS Studio</h2>
 <p><a href="https://snoober.home.blog/">https://snoober.home.blog/</a></p>
 <h2 id="wsl-ssh">wsl ssh</h2>
