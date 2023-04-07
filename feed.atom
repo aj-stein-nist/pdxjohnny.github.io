@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-04-07T23:08:16Z</updated>
+  <updated>2023-04-07T23:08:53Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2977,7 +2977,8 @@ Requirement already satisfied: typing-extensions in ./.local/lib/python3.9/site-
 </blockquote>
 <pre><code class="language-console" data-lang="console">$ wget --mirror --convert-links --adjust-extension --page-requisites  http://www.mywebsite.com/
 </code></pre><h2 id="remove-bullshit-docker-images">Remove bullshit docker images</h2>
-<pre><code class="language-console" data-lang="console">$ docker rmi $(docker images | grep \&lt;none\&gt; | awk '{print $3}')
+<pre><code class="language-console" data-lang="console">$ docker rm $(docker ps -qa)
+$ docker rmi $(docker images | grep \&lt;none\&gt; | awk '{print $3}')
 </code></pre>]]></content>
   </entry>
   <entry>
