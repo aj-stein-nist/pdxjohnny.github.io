@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-06-06T18:11:54Z</updated>
+  <updated>2023-06-13T19:21:13Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -919,6 +919,15 @@ using the system, because not all programs use utmp logging.</p>
 <h2 id="2022-07-13">2022-07-13</h2>
 <ul>
 <li><a href="https://cfcd-prep.cloudfoundry.org/pushing/envars/">https://cfcd-prep.cloudfoundry.org/pushing/envars/</a></li>
+</ul>
+<h2 id="2023-06-13">2023-06-13</h2>
+<ul>
+<li>React hooks useAsync
+<ul>
+<li><a href="https://www.30secondsofcode.org/react/s/use-async/">https://www.30secondsofcode.org/react/s/use-async/</a></li>
+<li><a href="https://github.com/30-seconds/30-seconds-of-code">https://github.com/30-seconds/30-seconds-of-code</a></li>
+</ul>
+</li>
 </ul>]]></content>
   </entry>
   <entry>
