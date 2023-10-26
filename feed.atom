@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-10-10T20:26:30Z</updated>
+  <updated>2023-10-26T00:37:21Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2973,8 +2973,14 @@ Requirement already satisfied: typing-extensions in ./.local/lib/python3.9/site-
 <pre><code class="language-console" data-lang="console">$ shutdown /r /fw /f /t 0
 </code></pre><h2 id="git-push-to-current-branch">Git push to current branch</h2>
 <pre><code class="language-console" data-lang="console">$ git push -u origin $(git branch | grep -E '^\*' | sed -e 's/\* //')
-</code></pre><h2 id="ssh-port-forward-remote-port-to-enable-connection-via-local-port"><code>ssh</code> port forward remote port to enable connection via local port</h2>
+</code></pre><h2 id="ssh-port-forward-remote-port-to-enable-connection-via-local-port-to-port-on-remote-server"><code>ssh</code> port forward remote port to enable connection via local port to port on remote server</h2>
 <pre><code class="language-console" data-lang="console">$ ssh -nNT -L 8000::8000 target
+</code></pre><h2 id="ssh-port-forward-local-port-to-enable-connection-to-port-on-remote-server-to-access-local-port"><code>ssh</code> port forward local port to enable connection to port on remote server to access local port</h2>
+<pre><code class="language-console" data-lang="console">$ ssh -nNT -R 127.0.0.1:6000:0.0.0.0:6000 target
+</code></pre><p>Ensure <code>GatewayPorts</code> is <code>yes</code> server side</p>
+<p><strong>/etc/ssh/sshd_config</strong></p>
+<pre><code>AllowTcpForwarding yes
+GatewayPorts yes
 </code></pre><h2 id="json-to-yaml-with-python-cli">JSON to YAML with Python CLI</h2>
 <p>Source: <a href="https://github.com/intel/dffml/blob/8847989eb4cc9f6aa484285ba9c11ff920113ed3/docs/arch/0008-Manifest.md">https://github.com/intel/dffml/blob/8847989eb4cc9f6aa484285ba9c11ff920113ed3/docs/arch/0008-Manifest.md</a></p>
 <pre><code class="language-console" data-lang="console">$ python -c &quot;import sys, pathlib, json, yaml; print(yaml.dump(json.load(sys.stdin)))&quot; &lt; manifest.json
