@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-10-26T00:37:21Z</updated>
+  <updated>2023-10-31T21:16:06Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2692,7 +2692,9 @@ you got it.</p>
 inside them.</p>
 <pre><code class="language-console" data-lang="console">$ git grep -A 25 -E 'dffml train|dffml accuracy|dffml predict' | python -c 'import sys; print(&quot;--&quot;.join([i for i in sys.stdin.read().split(&quot;--&quot;) if not &quot;model-directory&quot; in i]).strip())'
 </code></pre><h2 id="display-a-file-as-plain-text-in-a-browser">Display a file as plain text in a browser</h2>
-<pre><code class="language-console" data-lang="console">$ (echo -e 'HTTP/1.0 200 OK\n' &amp;&amp; cat myfile.txt) | nc -Nlp 8080
+<pre><code class="language-console" data-lang="console">$ (echo -e 'HTTP/1.0 200 OK\n' &amp;&amp; cat myfile.txt) | nc -Nlp 8000
+</code></pre><p>If you have <code>socat</code> that's better, as chrome sometimes requests the favicon then netcat closes the listening socket. <code>socat</code> will serve multiple connections.</p>
+<pre><code class="language-console" data-lang="console">$ (echo -e 'HTTP 1.0\n200 OK\n' &amp;&amp; cat myfile.txt | tee /dev/stderr | socat - TCP-LISTEN:8000,fork,reuseaddr
 </code></pre><p>Redisplay on reload.</p>
 <ul>
 <li><code>-N</code> to netcat mean close socket on EOF from STDIN</li>
