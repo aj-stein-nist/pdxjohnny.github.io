@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-11-10T13:29:30Z</updated>
+  <updated>2023-11-11T09:52:06Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -2704,6 +2704,9 @@ inside them.</p>
 <p>Remove all newlines from end of file</p>
 <pre><code class="language-console" data-lang="console">$ for file in $(echo examples/notebooks/*.ipynb); do vim -b '+set noeol' '+wq' $file; done
 </code></pre><h2 id="open-a-list-of-files-in-tmux-panes">Open a list of files in tmux panes</h2>
+<ul>
+<li><a href="https://github.com/tmux/tmux/wiki/Advanced-Use">https://github.com/tmux/tmux/wiki/Advanced-Use</a></li>
+</ul>
 <pre><code class="language-console" data-lang="console">$ for file in $(git ls-files | grep -E '.*\.cpp|.*\.h|.*\.ino'); do tmux split-window -h &quot;vim ${file}&quot;; tmux next-layout; done
 </code></pre><p><a href="https://asciinema.org/a/441107"><img src="https://asciinema.org/a/441107.svg" alt="asciicast"></a></p>
 <h2 id="close-all-but-the-active-tmux-pane">Close all but the active tmux pane</h2>
