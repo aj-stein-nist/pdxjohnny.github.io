@@ -9,7 +9,7 @@
   </author>
   <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
   <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
-  <updated>2023-11-11T09:52:06Z</updated>
+  <updated>2023-11-11T09:53:56Z</updated>
   <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
   <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
   <entry>
@@ -3038,6 +3038,9 @@ $ sed -e 's/import os/import snoop\n&amp;/g' -e 's/def main/@snoop\n&amp;/g' ~/d
 <span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="n">http</span><span class="err">:</span><span class="p">//</span><span class="n">localhost</span><span class="err">:</span><span class="n">8080</span><span class="p">/</span> <span class="n">-Method</span> <span class="n">POST</span> <span class="n">-Body</span> <span class="nv">$body</span>
 </code></pre></div><h2 id="digital-ocean">Digital Ocean</h2>
 <p>I ❤️ DigitalOcean 🐳</p>
+<ul>
+<li><a href="https://github.com/tmux/tmux/wiki/Advanced-Use#piping-pane-changes">https://github.com/tmux/tmux/wiki/Advanced-Use#piping-pane-changes</a></li>
+</ul>
 <h3 id="create-a-docker-droplet">Create a Docker Droplet</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">COMPUTE_DOMAIN</span><span class="o">=</span>chadig.com <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">COMPUTE_SUBDOMAIN</span><span class="o">=</span>scitt.eve <span class="nb">export</span> <span class="nv">COMPUTE_NAME</span><span class="o">=</span>scitt-eve
 
