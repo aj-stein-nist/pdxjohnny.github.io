@@ -31,7 +31,7 @@ subtitle = "IETF 118 Notes"
   - Tristan
   - Cedrick
   - A.J. Stein
-    - https://github.com/aj-stein-nist/oscal-content
+    - https://github.com/usnistgov/oscal-content
   - John
   - Henk Birkholz
   - Brent
